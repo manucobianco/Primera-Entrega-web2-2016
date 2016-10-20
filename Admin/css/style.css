@@ -1,0 +1,51 @@
+.jumbotron{
+	text-align: center;
+	padding-bottom: 0px;
+	padding-top: 50px;
+}
+.col-xs-8, col-xs-offset-2 col-md-8, col-md-offset-2{
+	padding: 0px;
+}
+
+.ImgContenido{
+	float: left;
+}
+.row p{
+	text-align: justify;
+	text-align: center;
+	padding-bottom: 40px;
+}
+.footer{
+	border-top: solid;
+	border-width: 1px;
+	border-color: #C0C0C0;
+	margin-top: 500px;
+}
+.footer p{
+	padding-left: 10px;
+	padding-top: 50px;
+}
+
+td, th{
+	text-align: center;
+}
+.panel-heading h3{
+ text-align: center;
+}
+
+.carousel-inner {
+	 text-align: center;
+}
+.carousel .item > img {
+	display: inline-block;
+	}
+
+	.carousel-control.left, .carousel-control.right {
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, transparent 100%);
+	}
+li{
+	list-style-type: none;
+	text-align: center;
+	
+}
+

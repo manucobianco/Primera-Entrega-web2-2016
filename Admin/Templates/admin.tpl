@@ -1,0 +1,36 @@
+{extends file="base.tpl"}
+{block name="title"} Principal{/block}
+{block name="opiniones"}
+<table class="table table-bordered">
+  <thead>
+      <th>
+        Nombre
+      </th>
+      <th>
+        Email
+      </th>
+      <th>
+        Opinion
+      </th>
+      <th>
+        Acciones
+      </th>
+  </thead>
+  <tbody id="tblBodyOpinion">
+    {if !empty($opiniones)}
+    {foreach $opiniones as $opinion}
+        <tr>
+          <td>{$opinion['nombre']}</td>
+          <td>{$opinion['email']}</td>
+          <td>{$opinion['opinion']}</td>
+          <td><a class="glyphicon glyphicon-trash borrar-opinion" href="index.php?action=borrar_opinion&id_opinion={$opinion['id_opinionUsuario']}"></a></td>
+        </tr>
+    {/foreach}
+    {else}
+      <tr>
+        <td align="center" colspan="4"><b>No hay opiniones.<b/></td>
+      </tr>
+    {/if}
+  </tbody>
+  </table>
+{/block}
