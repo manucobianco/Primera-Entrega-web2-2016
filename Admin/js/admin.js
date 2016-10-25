@@ -5,6 +5,21 @@ $(document).ready(function(){
 function borrarActivo() {
   $("li").removeClass("active");
 }
+function cargarContenido(url,titulo){
+  $.ajax({
+      type:"GET",
+      dataType:"HTML",
+      url: "index.php?action=mostrar_"+url,
+      success:function (data){
+          $("#contenido").html(data);
+            $(document).attr("title",titulo);
+      },
+      error:function(data){
+        window.history.pushState('error', 'error' , 'error.html');
+        $(document).attr("title","error");
+      }
+  });
+}
 $(".borrar-opinion").click(function(event) {
   event.preventDefault();
   var src=$(this).attr("href");
@@ -18,96 +33,36 @@ $(".borrar-opinion").click(function(event) {
 
 $("#home").click(function(event){
   event.preventDefault();
-  $.ajax({
-      type:"GET",
-      dataType:"HTML",
-      url: "index.php?action=home",
-      success:function (data){
-          $("#contenido").html(data);
-            $(document).attr("title","Administracion-Principal");
-      },
-      error:function(data){
-        window.history.pushState('error', 'error' , 'error.html');
-        $(document).attr("title","error");
-      }
-  });
+  cargarContenido("home","Administracion-Principal");
   borrarActivo();
   $("#home").addClass("active");
-  });
+});
+
 $("#cargarImagenes").click(function(event){
     event.preventDefault();
-    $.ajax({
-        type:"GET",
-        dataType:"HTML",
-        url: "index.php?action=mostrar_cargar_imagenes",
-        success:function (data){
-            $("#contenido").html(data);
-            $(document).attr("title","Administracion-Cargar Imagenes");
-        },
-        error:function(data){
-          window.history.pushState('error', 'error' , 'error.html');
-          $(document).attr("title","error");
-        }
-    });
+    cargarContenido("cargar_imagenes","Administracion-Administrar Imagenes");
     borrarActivo();
     $("#cargarImagenes").addClass("active");
 });
+
 $("#cargarNoticias").click(function(event){
     event.preventDefault();
-    $.ajax({
-        type:"GET",
-        dataType:"HTML",
-        url: "index.php?action=mostrar_cargar_noticia",
-        success:function (data){
-            $("#contenido").html(data);
-            $(document).attr("title","Administracion-Cargar noticia");
-        },
-        error:function(data){
-          window.history.pushState('error', 'error' , 'error.html');
-          $(document).attr("title","error");
-        }
-    });
+    cargarContenido("cargar_noticia","Administracion-Administrar Noticias");
     borrarActivo();
     $("#cargarNoticias").addClass("active");
 });
 $("#cargarDisco").click(function(event){
   event.preventDefault();
-  $.ajax({
-    type:"GET",
-    dataType:"HTML",
-    url: "index.php?action=mostrar_cargar_disco",
-    success:function (data){
-      $("#contenido").html(data);
-      $(document).attr("title","Administracion-Cargar Disco");
-    },
-    error:function(data){
-      window.history.pushState('error', 'error' , 'error.html');
-      $(document).attr("title","error");
-    }
-  });
+  cargarContenido("cargar_disco","Administracion-Administrar Discos");
   borrarActivo();
   $("#cargarDisco").addClass("active");
-
-  });
+});
 
 $("#crearCategoria").click(function(event){
     event.preventDefault();
-    $.ajax({
-        type:"GET",
-        dataType:"HTML",
-        url: "index.php?action=mostrar_crear_categoria",
-        success:function (data){
-            $("#contenido").html(data);
-            $(document).attr("title","Administracion-Crear categoria");
-        },
-        error:function(data){
-          window.history.pushState('error', 'error' , 'error.html');
-          $(document).attr("title","error");
-        }
-    });
+    cargarContenido("crear_categoria","Administracion-Administrar Categorias");
     borrarActivo();
     $("#crearCategoria").addClass("active");
-
 });
 
 });

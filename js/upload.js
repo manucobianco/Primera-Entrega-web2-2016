@@ -4,7 +4,7 @@ function limpiarValores() {
   $("input").val("");
   $("textarea").val("");
 }
-$("#btnEnviarOpinion").click(function(ev){
+$("#form-opinion").submit(function(ev){
   ev.preventDefault();
   var datos = new FormData();
 

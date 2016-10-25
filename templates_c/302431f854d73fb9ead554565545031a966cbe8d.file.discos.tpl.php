@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-16 23:33:27
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-25 02:25:17
          compiled from ".\templates\discos.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:19625803f2274111d9-18256402%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:7465580ea5301aa379-56470770%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '302431f854d73fb9ead554565545031a966cbe8d' => 
     array (
       0 => '.\\templates\\discos.tpl',
-      1 => 1443643796,
+      1 => 1477354930,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '19625803f2274111d9-18256402',
+  'nocache_hash' => '7465580ea5301aa379-56470770',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_580ea53042ec85_59696515',
   'variables' => 
   array (
     'discos' => 0,
     'disco' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5803f22751ea96_39760813',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5803f22751ea96_39760813')) {function content_5803f22751ea96_39760813($_smarty_tpl) {?>      <table class="table table-bordered">
+<?php if ($_valid && !is_callable('content_580ea53042ec85_59696515')) {function content_580ea53042ec85_59696515($_smarty_tpl) {?>      <table class="table table-bordered">
         <thead>
             <th>
               Nombre
@@ -57,9 +57,4 @@ $_smarty_tpl->tpl_vars['disco']->_loop = true;
         </div>
       </div>
     </div>
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 <?php }} ?>

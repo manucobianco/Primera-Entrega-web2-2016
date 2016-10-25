@@ -1,4 +1,3 @@
-
     <h1 class="page-header">Cargar discos</h1>
     <form action="#"enctype="multipart/form-data" method="REQUEST">
       <div class="form-group">

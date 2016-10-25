@@ -4,7 +4,7 @@ class ConfigApp {
 //ADMIN
   public static $ACTION = 'action';
 //Navegacion
-  public static $ACTION_DEFAULT = 'home';
+  public static $ACTION_DEFAULT = 'mostrar_home';
   public static $ACTION_MOSTRAR_CARGAR_NOTICIA= 'mostrar_cargar_noticia';
   public static $ACTION_MOSTRAR_CARGAR_IMAGENES='mostrar_cargar_imagenes';
   public static $ACTION_MOSTRAR_CREAR_CATEGORIA='mostrar_crear_categoria';

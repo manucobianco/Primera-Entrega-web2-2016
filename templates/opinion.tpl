@@ -3,7 +3,7 @@
           <h3 class="panel-title">Ante cualquier duda, sugerencia u opinion, no dudes en escribirnos!</h3>
         </div>
         <div class="panel-body">
-          <form>
+          <form id="form-opinion">
             <div class="form-group">
               <label for="name">Nombre</label>
               <input type="text" class="form-control" name="nombre" id="name" placeholder="Ingrese el Nombre">

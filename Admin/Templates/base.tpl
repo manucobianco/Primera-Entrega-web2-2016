@@ -25,11 +25,11 @@
     {block name="wrap"}
     <div class="container" id="wrap">
       <ul class="nav nav-pills">
-        <li role="presentation" class="active"id="home"><a class="home" href="#">Home</a></li>
-        <li role="presentation"id="cargarImagenes"><a class="cargar-imagenes" href="#">Cargar Imagenes</a></li>
-        <li role="presentation" id="cargarNoticias"><a class="cargar-noticia" href="#">Cargar Noticia</a></li>
-        <li role="presentation"id="crearCategoria"><a class="crear-categoria" href="#">Crear Categoria</a></li>
-        <li role="presentation"id="cargarDisco"><a class="cargar-disco" href="#">Cargar Disco</a></li>
+        <li role="presentation" class="active"id="home"><a class="home" href="#">Administrar Opiniones</a></li>
+        <li role="presentation"id="cargarImagenes"><a class="cargar-imagenes" href="#">Administrar Imagenes</a></li>
+        <li role="presentation" id="cargarNoticias"><a class="cargar-noticia" href="#">Administrar Noticias</a></li>
+        <li role="presentation"id="crearCategoria"><a class="crear-categoria" href="#">Administrar Categorias</a></li>
+        <li role="presentation"id="cargarDisco"><a class="cargar-disco" href="#">Administrar Discos</a></li>
       </ul>
       <div id="contenido">
         <h1 class="page-header">Pagina de Administracion</h1>

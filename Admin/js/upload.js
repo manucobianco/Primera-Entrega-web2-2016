@@ -1,16 +1,35 @@
 $(document).ready(function(){
 "use strict";
+
 function limpiarValores() {
   $("input").val("");
   $("textarea").val("");
 }
-$("#btnCargarImagen").click(function(event){
+function cargarContenido(url,titulo){
+  $.ajax({
+      type:"GET",
+      dataType:"HTML",
+      url: "index.php?action=mostrar_"+url,
+      success:function (data){
+          $("#contenido").html(data);
+            $(document).attr("title",titulo);
+      },
+      error:function(data){
+        window.history.pushState('error', 'error' , 'error.html');
+        $(document).attr("title","error");
+      }
+});
+}
+
+//imagenes
+$("#form-imagen").submit(function(event){
   event.preventDefault();
   var imagen= document.getElementById("input-imagen");
   var file= imagen.files[0];
+  var descripcion= $("#inputDescripcion").val();
   var data = new FormData();
   data.append("imagen",file);
-
+  data.append("descripcion",descripcion);
   $.ajax({
    method: "POST",
    url: "index.php?action=cargar_imagen",
@@ -18,8 +37,11 @@ $("#btnCargarImagen").click(function(event){
    contentType: false,
    cache: false,
    processData:false,
+   complete:function(){
+     cargarContenido("cargar_imagenes","Administracion-Administrar Imagenes");
+     alert("se cargaron los datos.");
+   }
   });
-  $("#cargarImagenes").trigger("click");
 
 });
 $("#btnCargarNoticia").click(function(ev){
@@ -42,13 +64,13 @@ $("#btnCargarNoticia").click(function(ev){
       ,cache: false
       ,processData: false // No procesar los archivos
       ,contentType: false // Con false, jQuery selecciona automaticamente el tipo
-      ,complete:function(){alert("se cargaron los datos.");} // Con false, jQuery selecciona automaticamente el tipo
-
+      ,complete:function(){
+      cargarContenido("cargar_noticia","Administracion-Administrar Imagenes");
+        alert("se cargaron los datos.");} // Con false, jQuery selecciona automaticamente el tipo
     });
   }else {
     alert("Por favor complete todos los campos.");
   }
-  $(".cargar-noticia").trigger("click");
 });
 $("#btnCrearCategoria").click(function(ev){
   ev.preventDefault();
@@ -64,10 +86,11 @@ $("#btnCrearCategoria").click(function(ev){
       ,cache: false
       ,processData: false // No procesar los archivos
       ,contentType: false
-      ,complete:function(){alert("se cargaron los datos.");} // Con false, jQuery selecciona automaticamente el tipo
-
+      ,complete:function(){
+      cargarContenido("crear_categoria","Administracion-Administrar Categorias");
+        alert("se cargaron los datos.");
+      }
     });
-    $(".crear-categoria").trigger("click");
   }else {
     alert("Por favor complete todos los campos.");
   }
@@ -93,9 +116,10 @@ $("#btnCargarDisco").click(function(ev){
       ,cache: false
       ,processData: false // No procesar los archivos
       ,contentType: false
-      ,complete:function(){alert("se cargaron los datos.");} // Con false, jQuery selecciona automaticamente el tipo
+      ,complete:function(){
+        cargarContenido("cargar_disco","Administracion-Administrar Discos");
+        alert("se cargaron los datos.");} // Con false, jQuery selecciona automaticamente el tipo
     });
-    $(".cargar-disco").trigger("click");
   }else {
     alert("Por favor complete todos los campos.");
   }
@@ -108,10 +132,10 @@ $(".borrar-disco").click(function(event) {
   $.ajax({
      type : "GET"
     ,url : src
-    ,complete:function(){alert("se borro el disco.");} // Con false, jQuery selecciona automaticamente el tipo
-
+    ,complete:function(){
+    cargarContenido("cargar_disco","Administracion-Administrar Discos");
+      alert("se borro el disco.");} // Con false, jQuery selecciona automaticamente el tipo
   });
-  $(".cargar-disco").trigger("click");
 });
 
 $(".borrar-imagen").click(function(event) {
@@ -120,10 +144,10 @@ $(".borrar-imagen").click(function(event) {
   $.ajax({
      type : "GET"
     ,url : src
-    ,complete:function(){alert("se borro la imagen.");} // Con false, jQuery selecciona automaticamente el tipo
-
+    ,complete:function(){
+    cargarContenido("cargar_imagenes","Administracion-Administrar Imagenes");
+      alert("se borro la imagen.");} // Con false, jQuery selecciona automaticamente el tipo
   });
-  $(".cargar-imagenes").trigger("click");
 });
 $(".borrar-categoria").click(function(event) {
   event.preventDefault();
@@ -131,9 +155,10 @@ $(".borrar-categoria").click(function(event) {
   $.ajax({
      type : "GET"
     ,url : src
-    ,complete:function(){alert("se borro la categoria y sus noticias.");} // Con false, jQuery selecciona automaticamente el tipo
+    ,complete:function(){
+      cargarContenido("crear_categoria","Administracion-Administrar Imagenes");
+      alert("se borro la categoria y sus noticias.");} // Con false, jQuery selecciona automaticamente el tipo
   });
-  $(".crear-categoria").trigger("click");
 });
 $(".borrar-noticia").click(function(event) {
   event.preventDefault();
@@ -141,9 +166,10 @@ $(".borrar-noticia").click(function(event) {
   $.ajax({
      type : "GET"
     ,url : src
-    ,complete:function(){alert("se borro la noticia.");} // Con false, jQuery selecciona automaticamente el tipo
+    ,complete:function(){
+      cargarContenido("cargar_noticia","Administracion-Administrar Noticia");
+      alert("se borro la noticia.");} // Con false, jQuery selecciona automaticamente el tipo
   });
-  $(".cargar-noticia").trigger("click");
 });
 $(".borrar-opinion").click(function(event) {
   event.preventDefault();
@@ -151,17 +177,21 @@ $(".borrar-opinion").click(function(event) {
   $.ajax({
      type : "GET"
     ,url : src
-    ,complete:function(){alert("se borro la opinion.");} // Con false, jQuery selecciona automaticamente el tipo
+    ,complete:function(){
+      cargarContenido("home","Administracion-Administrar Opiniones");
+      alert("se borro la opinion.");} // Con false, jQuery selecciona automaticamente el tipo
   });
-  $(".home").trigger("click");
 });
+
 $(".mostrar-modificar-categoria").click(function(event){
   event.preventDefault();
   var url=$(this).attr("href");
-  window.open(url,"Modificar","width=300,height=200,menubar=no")
-
+  window.open(url,"Modificar","width=300,height=200,menubar=no");
+  var r = confirm("Luego de modificar la categoria presione aceptar para continuar.");
+  if (r == true) {
+      cargarContenido("crear_categoria","Administracion-Administrar Imagenes");
+  }
 });
-
 $("#btnModificarCategoria").click(function(event){
   event.preventDefault();
   var datos = new FormData();
@@ -179,18 +209,21 @@ $("#btnModificarCategoria").click(function(event){
       ,processData: false // No procesar los archivos
       ,contentType: false
       ,complete:function(){alert("se modificaron los datos.");} // Con false, jQuery selecciona automaticamente el tipo
-
     });
   }else {
     alert("Por favor complete todos los campos.");
   }
+
   window.close();
 });
 $(".mostrar-modificar-disco").click(function(event){
   event.preventDefault();
   var url=$(this).attr("href");
-  window.open(url,"Modificar","width=300,height=200,menubar=no")
-
+  window.open(url,"Modificar","width=300,height=200,menubar=no");
+  var r = confirm("Luego de modificar el disco presione aceptar para continuar.");
+  if (r == true) {
+      cargarContenido("cargar_disco","Administracion-Administrar Discos");
+  }
 });
 $("#btnModificarDisco").click(function(event){
   event.preventDefault();
@@ -224,7 +257,10 @@ $(".mostrar-modificar-noticia").click(function(event){
   event.preventDefault();
   var url=$(this).attr("href");
   window.open(url,"Modificar","width=300,height=200,menubar=no")
-
+  var r = confirm("Luego de modificar la noticia presione aceptar para continuar.");
+  if (r == true) {
+      cargarContenido("cargar_noticia","Administracion-Administrar noticia");
+  }
 });
 
 $("#btnModificarNoticia").click(function(event){
@@ -258,35 +294,5 @@ $("#btnModificarNoticia").click(function(event){
   }
   window.close();
 });
-
-
-
-
-$("#inputFile").on("change", function(){
-       /* Limpiar vista previa */
-    $("#vista-previa").html('');
-
-    var archivos = document.getElementById('inputFile').files;
-
-    var navegador = window.URL || window.webkitURL;
-
-    /* Recorrer los archivos */
-
-    for(x=0; x<archivos.length; x++){
-      /* Validar tamaño y tipo de archivo */
-      var size = archivos[x].size;
-      var type = archivos[x].type;
-      var name = archivos[x].name;
-      if (size > 1024*1024){
-        $("#vista-previa").append("<p style='color: red'>El archivo "+name+" supera el máximo permitido 1MB</p>");
-      }else if(type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png' && type != 'image/gif'){
-        $("#vista-previa").append("<p style='color: red'>El archivo "+name+" no es del tipo de imagen permitida.</p>");
-        }else{
-            var objeto_url = navegador.createObjectURL(archivos[x]);
-            $("#vista-previa").append("<img src="+objeto_url+" width='250' height='250'>");
-         }
-       }
-     });
-
 
 });

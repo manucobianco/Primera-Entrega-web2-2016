@@ -5,7 +5,7 @@ class ImagenModel extends Model
 {
 
 
-  
+
 
       function borrarImagen($id_imagen){
         $consulta= $this->db->prepare("DELETE FROM imagen WHERE id_imagen=?");
@@ -20,17 +20,16 @@ class ImagenModel extends Model
 
 
 
-      function cargarImagen($file){
+      function cargarImagen($file,$descripcion){
           $nombre = $file['name'];
           $tipo = $file['type'];
           $ruta_provisional = $file['tmp_name'];
-          $size = $file['size'];
-          $carpeta = "images/Upload/";
-          $consulta= $this->db->prepare('INSERT INTO imagen(path,nombre) values(?, ?)');
-          $consulta->execute(array($src,$nombre));
+          $carpeta = "upload/";
           $src = $carpeta.uniqid().$nombre;
-          move_uploaded_file($ruta_provisional, $src);
+          $consulta= $this->db->prepare('INSERT INTO imagen(path,nombre) values(?, ?)');
+          $consulta->execute(array($src,$descripcion));
 
+          move_uploaded_file($ruta_provisional, $src);
       }
 
 

@@ -38,16 +38,6 @@
                             <li><a id="lnkOpinion" href="">Envianos tu mail</a></li>
                         </ul>
                        </li>
-                    <!------------------------------------------------->
-                    <div class="dropdown">
-                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                      </ul>
-                    </div>
-                    <!------------------------------------------------->
 
                 </ul>
               </div>
@@ -59,7 +49,7 @@
       <!--Contenido-->
 
       <div class="row">
-        <div id="contenido" class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1">
+        <div id="contenido" class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1"></div>
       </div>
 
 

@@ -1,8 +1,11 @@
 <?php
 include_once 'Config/config_app.php';
-include_once 'Controllers/controller.php';
 include_once 'Controllers/pagina_controller.php';
-include_once 'Controllers/upload_controller.php';
+include_once 'Controllers/categoria_controller.php';
+include_once 'Controllers/noticia_controller.php';
+include_once 'Controllers/disco_controller.php';
+include_once 'Controllers/imagen_controller.php';
+include_once 'Controllers/opinion_controller.php';
 
 
 //Tenga la clave action
@@ -55,53 +58,53 @@ else {
 //ABM
 //Altas
     case ConfigApp::$ACTION_CARGAR_IMAGEN:
-      $controller = new UploadController();
-      $controller-> cargarImagenes();
+      $controller = new ImagenController();
+      $controller->cargarImagen();
       break;
     case ConfigApp::$ACTION_CARGAR_NOTICIA:
-      $controller = new UploadController();
+      $controller = new NoticiaController();
       $controller->cargarNoticia();
       break;
     case ConfigApp::$ACTION_CREAR_CATEGORIA:
-      $controller = new UploadController();
+      $controller = new CategoriaController();
       $controller->crearCategoria();
       break;
     case ConfigApp::$ACTION_CARGAR_DISCO:
-      $controller= new UploadController();
+      $controller= new DiscoController();
       $controller->cargarDisco();
       break;
 //Bajas
     case ConfigApp::$ACTION_BORRAR_OPINION:
-      $controller= new UploadController();
+      $controller= new OpinionController();
       $controller->borrarOpinion();
       break;
     case ConfigApp::$ACTION_BORRAR_IMAGEN:
-      $controller= new UploadController();
+      $controller= new ImagenController();
       $controller->borrarImagen();
       break;
     case ConfigApp::$ACTION_BORRAR_NOTICIA:
-      $controller= new UploadController();
+      $controller= new NoticiaController();
       $controller->borrarNoticia();
       break;
     case ConfigApp::$ACTION_BORRAR_CATEGORIA:
-      $controller= new UploadController();
+      $controller= new CategoriaController();
       $controller->borrarCategoria();
       break;
     case ConfigApp::$ACTION_BORRAR_DISCO:
-      $controller= new UploadController();
+      $controller= new DiscoController();
       $controller->borrarDisco();
       break;
 //modificaciones
     case ConfigApp::$ACTION_MODIFICAR_NOTICIA:
-      $controller= new UploadController();
+      $controller= new NoticiaController();
       $controller->modificarNoticia();
       break;
     case ConfigApp::$ACTION_MODIFICAR_CATEGORIA:
-      $controller= new UploadController();
+      $controller= new CategoriaController();
       $controller->modificarCategoria();
       break;
     case ConfigApp::$ACTION_MODIFICAR_DISCO:
-      $controller= new UploadController();
+      $controller= new DiscoController();
       $controller->modificarDisco();
       break;
 

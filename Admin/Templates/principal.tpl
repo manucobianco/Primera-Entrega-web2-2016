@@ -21,7 +21,7 @@
           <td>{$opinion['nombre']}</td>
           <td>{$opinion['email']}</td>
           <td>{$opinion['opinion']}</td>
-          <td><a class="glyphicon glyphicon-trash borrar-opinion" href="admin.php?action=borrar_opinion&id_opinion={$opinion['id_opinionUsuario']}"></a></td>
+          <td><a class="glyphicon glyphicon-trash borrar-opinion" href="index.php?action=borrar_opinion&id_opinion={$opinion['id_opinionUsuario']}"></a></td>
         </tr>
     {/foreach}
     {else}
@@ -31,5 +31,6 @@
     {/if}
     </tbody>
     </table>
+    <script src="js/upload.js" charset="utf-8"></script>
 
 </div>
