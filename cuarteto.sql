@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 20-10-2016 a las 03:20:57
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 25-10-2016 a las 16:49:20
 -- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 7.0.8
+-- Versión de PHP: 5.5.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,19 +23,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoriaNoticia`
+-- Estructura de tabla para la tabla `categorianoticia`
 --
 
-CREATE TABLE `categoriaNoticia` (
+CREATE TABLE `categorianoticia` (
   `id_categoriaNoticia` int(11) NOT NULL,
   `categoria` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `categoriaNoticia`
+-- Volcado de datos para la tabla `categorianoticia`
 --
 
-INSERT INTO `categoriaNoticia` (`id_categoriaNoticia`, `categoria`) VALUES
+INSERT INTO `categorianoticia` (`id_categoriaNoticia`, `categoria`) VALUES
 (9, 'Recitales'),
 (10, 'Proximamente'),
 (11, 'Blog');
@@ -81,10 +81,17 @@ INSERT INTO `disco` (`id_disco`, `nombre`, `anio`, `discografica`) VALUES
 
 CREATE TABLE `imagen` (
   `id_imagen` int(11) NOT NULL,
-  `fk_id_disco` int(11) NOT NULL,
   `path` varchar(200) NOT NULL,
   `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `imagen`
+--
+
+INSERT INTO `imagen` (`id_imagen`, `path`, `nombre`) VALUES
+(2, 'upload/580e9ccb294efimagen-no-disponible.jpg', 'imagen por defecto'),
+(3, 'upload/580ea7d367f09wolf.jpg', 'El Cuarteto De Nos Alberto Wolf');
 
 -- --------------------------------------------------------
 
@@ -113,10 +120,10 @@ INSERT INTO `noticia` (`id_noticia`, `nombre`, `contenido`, `fk_id_categoriaNoti
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `opinionUsuario`
+-- Estructura de tabla para la tabla `opinionusuario`
 --
 
-CREATE TABLE `opinionUsuario` (
+CREATE TABLE `opinionusuario` (
   `id_opinionUsuario` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -124,13 +131,20 @@ CREATE TABLE `opinionUsuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Volcado de datos para la tabla `opinionusuario`
+--
+
+INSERT INTO `opinionusuario` (`id_opinionUsuario`, `nombre`, `email`, `opinion`) VALUES
+(2, 'leo', 'prueba@gmail.com', 'opinion de prueba');
+
+--
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `categoriaNoticia`
+-- Indices de la tabla `categorianoticia`
 --
-ALTER TABLE `categoriaNoticia`
+ALTER TABLE `categorianoticia`
   ADD PRIMARY KEY (`id_categoriaNoticia`);
 
 --
@@ -143,8 +157,7 @@ ALTER TABLE `disco`
 -- Indices de la tabla `imagen`
 --
 ALTER TABLE `imagen`
-  ADD PRIMARY KEY (`id_imagen`),
-  ADD KEY `fk_id_disco` (`fk_id_disco`);
+  ADD PRIMARY KEY (`id_imagen`);
 
 --
 -- Indices de la tabla `noticia`
@@ -153,9 +166,9 @@ ALTER TABLE `noticia`
   ADD PRIMARY KEY (`id_noticia`);
 
 --
--- Indices de la tabla `opinionUsuario`
+-- Indices de la tabla `opinionusuario`
 --
-ALTER TABLE `opinionUsuario`
+ALTER TABLE `opinionusuario`
   ADD PRIMARY KEY (`id_opinionUsuario`);
 
 --
@@ -163,9 +176,9 @@ ALTER TABLE `opinionUsuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `categoriaNoticia`
+-- AUTO_INCREMENT de la tabla `categorianoticia`
 --
-ALTER TABLE `categoriaNoticia`
+ALTER TABLE `categorianoticia`
   MODIFY `id_categoriaNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `disco`
@@ -176,27 +189,17 @@ ALTER TABLE `disco`
 -- AUTO_INCREMENT de la tabla `imagen`
 --
 ALTER TABLE `imagen`
-  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
   MODIFY `id_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
--- AUTO_INCREMENT de la tabla `opinionUsuario`
+-- AUTO_INCREMENT de la tabla `opinionusuario`
 --
-ALTER TABLE `opinionUsuario`
-  MODIFY `id_opinionUsuario` int(11) NOT NULL AUTO_INCREMENT;
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `imagen`
---
-ALTER TABLE `imagen`
-  ADD CONSTRAINT `imagen_ibfk_1` FOREIGN KEY (`fk_id_disco`) REFERENCES `disco` (`id_disco`) ON DELETE CASCADE ON UPDATE CASCADE;
-
+ALTER TABLE `opinionusuario`
+  MODIFY `id_opinionUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
