@@ -2,13 +2,8 @@
 require_once 'model.php';
 class noticiasModel extends Model {
 
-<<<<<<< HEAD
-  function traerNoticias(){
-=======
-
   function traerNoticias()
   {
->>>>>>> refs/remotes/origin/master
     $traer=$this->db->prepare("SELECT * FROM noticia");
     $traer->execute();
     return $traer->fetchAll();
