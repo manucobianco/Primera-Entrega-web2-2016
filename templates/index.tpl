@@ -40,7 +40,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="index.php?action=pagina_login">Iniciar Sesion</a></li>
-                  <li><a>Registrate</a></li>
+                  <li><a href="index.php?action=register">Registrate</a></li>
                 </ul>
               </div>
             </div>

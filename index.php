@@ -54,13 +54,23 @@ else {
     break;
 
     case ConfigApp::$ACTION_PAGINA_LOGIN:
-        $paginaController = new usuarioController();
-        $paginaController->mostrarLogin();
+        $usuarioController = new usuarioController();
+        $usuarioController->mostrarLogin();
     break;
 
     case ConfigApp::$ACTION_VALIDAR_LOGIN:
-        $paginaController = new usuarioController();
-        $paginaController->validarLogin();
+        $usuarioController = new usuarioController();
+        $usuarioController->validarLogin();
+    break;
+
+    case ConfigApp::$ACTION_REGISTER:
+        $usuarioController = new usuarioController();
+        $usuarioController->mostrarRegistro();
+    break;
+
+    case ConfigApp::$ACTION_VALIDAR_REGISTER:
+        $usuarioController = new usuarioController();
+        $usuarioController->validarRegistro();
     break;
 
 

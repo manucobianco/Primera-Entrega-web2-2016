@@ -14,5 +14,7 @@ class ConfigApp {
   public static $ACTION_TRATER_NOTICIAS_ESPECIFICAS = 'trater_noticias_especificas';
   public static $ACTION_PAGINA_LOGIN = 'pagina_login';
   public static $ACTION_VALIDAR_LOGIN = 'validar_login';
+  public static $ACTION_REGISTER = 'register';
+  public static $ACTION_VALIDAR_REGISTER = 'validar_registro';
 }
  ?>
