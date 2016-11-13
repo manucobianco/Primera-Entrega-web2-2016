@@ -1,6 +1,7 @@
-<div class="container">
-  <div class="col-xs-12 col-sm-9">
+<div id="noticias" class="container">
+  <div id="categoria" class="col-xs-12 col-sm-9">
     {foreach $categorias as $categoria}
+
       <div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-8">
@@ -29,11 +30,12 @@
         </div><!--/container-->
       {/foreach}
     </div>
+
   <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
          <div class="list-group">
            <a class="list-group-item active">Indice</a>
            {foreach $categorias as $categoria}
-            <a href="index.php?action=trater_noticias_especificas&id_categoria={$categoria['id_categoriaNoticia']}" class="list-group-item">{$categoria['categoria']}</a>
+            <a href="" id="{$categoria['categoria']}"  class="list-group-item categorias">{$categoria['categoria']}</a>
            {/foreach}
          </div>
   </div><!--/.sidebar-offcanvas-->

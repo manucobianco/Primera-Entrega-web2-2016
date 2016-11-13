@@ -98,3 +98,20 @@ $("#lnkOpinion").on("click",function(event)
     }
   });
 });
+// 
+// $(".categorias").on("click",function(event)
+// {
+//   event.preventDefault();
+//   var id = $(this).attr('id');
+//   $.ajax({
+//     url:"index.php?action=categorias&id="+id,
+//     method:"GET",
+//     dataType:"html",
+//     success: function(data){
+//       $("#categoria").html(data);
+//     },
+//     error: function(){
+//       alert("No se a podido cargar la pagina de opinion. Intente nuevamente mas tarde.");
+//     }
+//   });
+// });

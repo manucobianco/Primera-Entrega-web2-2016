@@ -25,5 +25,6 @@ class noticiasModel {
     $noticias->execute(array($id_categoria));
     return $noticias->fetchAll();
   }
+
 }
 ?>

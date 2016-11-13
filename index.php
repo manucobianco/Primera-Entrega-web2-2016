@@ -73,6 +73,11 @@ else {
         $usuarioController->validarRegistro();
     break;
 
+    // case ConfigApp::$ACTION_CATEGORIAS:
+    //     $paginaController = new paginaController();
+    //     $paginaController->mostrarCategoria();
+    // break;
+
 
 
   default:

@@ -32,7 +32,10 @@ function mostrarNoticias($categorias,$noticias){
 function mostrarPaginaOpinion(){
   $this->smarty->display('opinion.tpl');
 }
-
+// 
+// function mostrarCategoria($id){
+//   $this->smarty->display(id+'.tpl');
+// }
 }
 
 

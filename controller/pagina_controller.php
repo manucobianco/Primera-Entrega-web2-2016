@@ -43,5 +43,13 @@ class paginaController {
       $this->view->mostrarNoticias($this->noticias_model->traerCategorias(),$this->noticias_model->traerNoticiasEspecificas($_REQUEST["id_categoria"]));
     }
 
+    // function mostrarCategoria(){
+    //   $filtro = 0;
+    //   if(isset($_REQUEST['filtro']) && $_REQUEST['filtro'] !=0){
+    //     $noticias= $this->noticias_model->
+    //   }
+    //   if(isset($id)) $this->view->mostrarCategoria($id);
+    // }
+
   }
 ?>

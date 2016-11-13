@@ -16,5 +16,6 @@ class ConfigApp {
   public static $ACTION_VALIDAR_LOGIN = 'validar_login';
   public static $ACTION_REGISTER = 'register';
   public static $ACTION_VALIDAR_REGISTER = 'validar_registro';
+  // public static $ACTION_CATEGORIAS = 'categorias';
 }
  ?>
