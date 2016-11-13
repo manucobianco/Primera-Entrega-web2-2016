@@ -33,7 +33,7 @@
          <div class="list-group">
            <a class="list-group-item active">Indice</a>
            {foreach $categorias as $categoria}
-            <a href="#{$categoria['categoria']}" class="list-group-item">{$categoria['categoria']}</a>
+            <a href="index.php?action=trater_noticias_especificas&id_categoria={$categoria['id_categoriaNoticia']}" class="list-group-item">{$categoria['categoria']}</a>
            {/foreach}
          </div>
   </div><!--/.sidebar-offcanvas-->

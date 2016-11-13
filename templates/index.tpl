@@ -26,7 +26,6 @@
                   <li><a id="lnkIntegrantes" href="">Integrantes</a></li>
                   <li><a id="lnkDiscos" href="">Discos</a></li>
                   <li><a id="lnkNoticias" href="">Noticias</a></li>
-
                         <!--Botones desplegables-->
                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactos <span class="caret"></span></a>
@@ -38,7 +37,10 @@
                             <li><a id="lnkOpinion" href="">Envianos tu mail</a></li>
                         </ul>
                        </li>
-
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="index.php?action=pagina_login">Iniciar Sesion</a></li>
+                  <li><a>Registrate</a></li>
                 </ul>
               </div>
             </div>

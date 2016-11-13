@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-25 02:19:46
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-12 23:22:57
          compiled from ".\templates\principal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11763580ea5226e6ea4-47109670%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0b26525eebfd9fcd7fdfdaecb232cf4715e3efca' => 
     array (
       0 => '.\\templates\\principal.tpl',
-      1 => 1477351530,
+      1 => 1477392668,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_580ea5228002e9_85339436',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_580ea5228002e9_85339436')) {function content_580ea5228002e9_85339436($_smarty_tpl) {?>
       <img class="ImgContenido" src="images/rataVioleta.png" alt="Logo">

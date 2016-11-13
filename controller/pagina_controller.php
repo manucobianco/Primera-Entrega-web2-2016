@@ -37,8 +37,11 @@ class paginaController {
       $this->view->mostrarPaginaOpinion();
       }
     function traerDiscos(){
-          $this->view->mostrar($this->discos_model->traerDiscos());
-        }
+      $this->view->mostrar($this->discos_model->traerDiscos());
+      }
+    function traerNoticiasEspecificas(){
+      $this->view->mostrarNoticias($this->noticias_model->traerCategorias(),$this->noticias_model->traerNoticiasEspecificas($_REQUEST["id_categoria"]));
+    }
 
   }
 ?>

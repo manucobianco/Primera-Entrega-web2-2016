@@ -20,5 +20,10 @@ class noticiasModel {
     $traer->execute();
     return $traer->fetchAll();
   }
+  function traerNoticiasEspecificas($id_categoria){
+    $noticias=$this->db->prepare("SELECT * FROM noticia WHERE fk_id_categoriaNoticia=?");
+    $noticias->execute(array($id_categoria));
+    return $noticias->fetchAll();
+  }
 }
 ?>

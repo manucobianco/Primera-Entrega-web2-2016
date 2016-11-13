@@ -2,6 +2,7 @@
 include_once 'config/config_app.php';
 include_once 'controller/pagina_controller.php';
 include_once 'controller/opinion_controller.php';
+include_once 'controller/usuario_controller.php';
 
 if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST) ||
 $_REQUEST[ConfigApp::$ACTION] == ConfigApp::$ACTION_DEFAULT)
@@ -46,6 +47,22 @@ else {
         $paginaController = new paginaController();
         $paginaController->traerDiscos();
     break;
+
+    case ConfigApp::$ACTION_TRATER_NOTICIAS_ESPECIFICAS:
+        $paginaController = new paginaController();
+        $paginaController->traerNoticiasEspecificas();
+    break;
+
+    case ConfigApp::$ACTION_PAGINA_LOGIN:
+        $paginaController = new usuarioController();
+        $paginaController->mostrarLogin();
+    break;
+
+    case ConfigApp::$ACTION_VALIDAR_LOGIN:
+        $paginaController = new usuarioController();
+        $paginaController->validarLogin();
+    break;
+
 
 
   default:

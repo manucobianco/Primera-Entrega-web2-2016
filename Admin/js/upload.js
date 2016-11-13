@@ -174,6 +174,7 @@ $(".borrar-noticia").click(function(event) {
 $(".borrar-opinion").click(function(event) {
   event.preventDefault();
   var src=$(this).attr("href");
+  console.loc(src);
   $.ajax({
      type : "GET"
     ,url : src
