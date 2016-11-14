@@ -29,10 +29,14 @@
         $pass = $_REQUEST["txtPassword"];
 
         $usuario = $this->model->getUsuario($email);
-        $usuario["password"];
         if(password_verify($pass,$usuario["password"])){
           session_start();
           $_SESSION["email"]=$email;
+          if($usuario['tipo']==1){
+            $_SESSION["tipo"]="admin";
+          }else{
+            $_SESSION["tipo"]="usuario";
+          }
           header("Location: index.php");
           die();
         }

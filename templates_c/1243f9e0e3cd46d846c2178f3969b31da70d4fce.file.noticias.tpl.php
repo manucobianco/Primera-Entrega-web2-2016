@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-13 19:42:21
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-13 21:28:23
          compiled from ".\templates\noticias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6318580ea53414d5a5-09226405%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1243f9e0e3cd46d846c2178f3969b31da70d4fce' => 
     array (
       0 => '.\\templates\\noticias.tpl',
-      1 => 1479061810,
+      1 => 1479068682,
       2 => 'file',
     ),
   ),
@@ -59,7 +59,8 @@ $_smarty_tpl->tpl_vars['noticia']->_loop = true;
                   <p><?php echo $_smarty_tpl->tpl_vars['noticia']->value['contenido'];?>
 </p>
                   <img src="images/imagen-no-disponible.jpg" alt="Imagen No Disponible" />
-                  <p><a>Mas Detalles»</a></p>
+                  <p><a href="" class="noticiaLink"  id="<?php echo $_smarty_tpl->tpl_vars['noticia']->value['id_noticia'];?>
+">Mas Detalles»</a></p>
               </div><!--/.col-xs-6.col-lg-4-->
 
                 <?php }?>

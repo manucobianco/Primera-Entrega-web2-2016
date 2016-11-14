@@ -19,7 +19,7 @@
                   <h2>{$noticia['nombre']}</h2>
                   <p>{$noticia['contenido']}</p>
                   <img src="images/imagen-no-disponible.jpg" alt="Imagen No Disponible" />
-                  <p><a>Mas Detalles»</a></p>
+                  <p><a href="" class="noticiaLink"  id="{$noticia['id_noticia']}">Mas Detalles»</a></p>
               </div><!--/.col-xs-6.col-lg-4-->
 
                 {/if}

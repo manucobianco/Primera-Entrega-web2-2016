@@ -3,6 +3,7 @@ include_once 'config/config_app.php';
 include_once 'controller/pagina_controller.php';
 include_once 'controller/opinion_controller.php';
 include_once 'controller/usuario_controller.php';
+include_once 'controller/comentarios_controller.php';
 
 if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST) ||
 $_REQUEST[ConfigApp::$ACTION] == ConfigApp::$ACTION_DEFAULT)
@@ -73,10 +74,21 @@ else {
         $usuarioController->validarRegistro();
     break;
 
+    case ConfigApp::$ACTION_NOTICIA:
+        $paginaController = new paginaController();
+        $paginaController->mostrarNoticia();
+    break;
+
     // case ConfigApp::$ACTION_CATEGORIAS:
     //     $paginaController = new paginaController();
     //     $paginaController->mostrarCategoria();
     // break;
+
+    case ConfigApp::$ACTION_MOSTRAR_COMENTARIOS:
+        $comentariosController = new comentariosController();
+        $comentariosController->mostrarComentarios();
+    break;
+
 
 
 

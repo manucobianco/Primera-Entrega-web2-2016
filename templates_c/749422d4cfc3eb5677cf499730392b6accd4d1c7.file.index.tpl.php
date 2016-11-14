@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-13 16:47:27
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-14 01:59:10
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:22626580ea52164a6e8-61519146%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '749422d4cfc3eb5677cf499730392b6accd4d1c7' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1479052010,
+      1 => 1479085039,
       2 => 'file',
     ),
   ),
@@ -55,6 +55,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                           <li><a href="https://twitter.com/cuartetodenos"target="_blank">Twitter</a></li>
                           <li><a href="https://www.youtube.com/user/cuartetodenos"target="_blank">Youtube</a></li>
                           <li class="divider"></li>
+                            <li><a id="lnkComentarios" href="">Comentarios</a></li>
                             <li><a id="lnkOpinion" href="">Envianos tu mail</a></li>
                         </ul>
                        </li>
@@ -85,6 +86,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <script src="js/jquery-2.1.4.min.js"></script>
       <script src="js/bootstrap.js"></script>
       <script src="js/ajax.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
+
     </body>
 </html>
 <?php }} ?>

@@ -1,3 +1,31 @@
+function recargarComentarios(){
+  $.ajax(
+    {
+      method:"GET",
+      dataType: "JSON",
+      url: "api/comentario",
+      success: mostrarComentarios
+    }
+  )
+//  $.get(api/comentario); DESPUES VER ASI
+}
+
+function mostrarComentarios(comentarios){
+    // for (var i = 0; i < comantarios.length; i++) {//comantarios
+    //   comentarios[i].comentario = tareas[i].finalizada ==0 ? false: true;
+    // }
+     var rendered = Mustache.render(template,{coment:comentarios});//el primer coment es el nombre de la variable, y le asigno comentarios!
+     $('#listaComentarios').html(rendered);
+
+}
+
+var template;
+$.ajax({ url: 'js/templates/comentario.mst',
+ success: function(templateReceived) {
+   template = templateReceived;
+ }
+});
+
 $(document).ready(function(){
 
   function cargarPrincipal()
@@ -15,8 +43,6 @@ $(document).ready(function(){
       }
     });
   };
-
-
 
   cargarPrincipal();
 
@@ -47,8 +73,6 @@ $(document).ready(function(){
       }
     });
   });
-
-});
 
 $("#lnkDiscos").on("click",function(event)
 {
@@ -98,20 +122,56 @@ $("#lnkOpinion").on("click",function(event)
     }
   });
 });
-// 
-// $(".categorias").on("click",function(event)
-// {
-//   event.preventDefault();
-//   var id = $(this).attr('id');
-//   $.ajax({
-//     url:"index.php?action=categorias&id="+id,
-//     method:"GET",
-//     dataType:"html",
-//     success: function(data){
-//       $("#categoria").html(data);
-//     },
-//     error: function(){
-//       alert("No se a podido cargar la pagina de opinion. Intente nuevamente mas tarde.");
-//     }
-//   });
-// });
+
+$("#contenido").on("click", "#noticias .noticiaLink", function(event)
+{
+event.preventDefault();
+  var id = $(this).attr('id');
+  $.ajax({
+    url:"index.php?action=noticia&id="+id,
+    method:"GET",
+    dataType:"html",
+    success: function(data){
+      $("#contenido").html(data);
+    },
+    error: function(){
+      alert("No se a podido cargar la pagina de la noticia. Intente nuevamente mas tarde.");
+    }
+  });
+});
+
+$('#lnkComentarios').on("click", function(event)
+{
+  event.preventDefault();
+  var id = $(this).attr('id');
+  $.ajax({
+    url:"index.php?action=mostrar_comentarios",
+    method:"GET",
+    dataType:"html",
+    success: function(data){
+      $("#contenido").html(data);
+      recargarComentarios();
+      setInterval(function(){recargarComentarios();},2000);//2000 dos segundos
+    },
+    error: function(){
+      alert("No se a podido cargar la pagina de comentarios. Intente nuevamente mas tarde.");
+    }
+  });
+});
+
+$('#contenido').on('click', "#btnEnviarComentario",function(eve){
+  eve.preventDefault();
+  $.ajax({
+    type: 'POST',
+    url:'api/comentario/' + $("#txtComentario").val(),
+    datatype: 'JSON',
+    success: function(data){
+      recargarComentarios();
+    },
+    error: function(data){
+      alert("Error");
+    }
+  });
+});
+
+});//On document ready
