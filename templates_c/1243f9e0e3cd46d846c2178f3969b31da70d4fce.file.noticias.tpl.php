@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-13 16:31:05
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-13 21:28:23
          compiled from ".\templates\noticias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6318580ea53414d5a5-09226405%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1243f9e0e3cd46d846c2178f3969b31da70d4fce' => 
     array (
       0 => '.\\templates\\noticias.tpl',
-      1 => 1479047464,
+      1 => 1479068682,
       2 => 'file',
     ),
   ),
@@ -26,13 +26,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_580ea5344106d9_24638091')) {function content_580ea5344106d9_24638091($_smarty_tpl) {?><div class="container">
-  <div class="col-xs-12 col-sm-9">
+<?php if ($_valid && !is_callable('content_580ea5344106d9_24638091')) {function content_580ea5344106d9_24638091($_smarty_tpl) {?><div id="noticias" class="container">
+  <div id="categoria" class="col-xs-12 col-sm-9">
     <?php  $_smarty_tpl->tpl_vars['categoria'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['categoria']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['categorias']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->key => $_smarty_tpl->tpl_vars['categoria']->value){
 $_smarty_tpl->tpl_vars['categoria']->_loop = true;
 ?>
+
       <div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-8">
@@ -58,7 +59,8 @@ $_smarty_tpl->tpl_vars['noticia']->_loop = true;
                   <p><?php echo $_smarty_tpl->tpl_vars['noticia']->value['contenido'];?>
 </p>
                   <img src="images/imagen-no-disponible.jpg" alt="Imagen No Disponible" />
-                  <p><a>Mas Detalles»</a></p>
+                  <p><a href="" class="noticiaLink"  id="<?php echo $_smarty_tpl->tpl_vars['noticia']->value['id_noticia'];?>
+">Mas Detalles»</a></p>
               </div><!--/.col-xs-6.col-lg-4-->
 
                 <?php }?>
@@ -69,6 +71,7 @@ $_smarty_tpl->tpl_vars['noticia']->_loop = true;
         </div><!--/container-->
       <?php } ?>
     </div>
+
   <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
          <div class="list-group">
            <a class="list-group-item active">Indice</a>
@@ -77,8 +80,8 @@ $_smarty_tpl->tpl_vars['noticia']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->key => $_smarty_tpl->tpl_vars['categoria']->value){
 $_smarty_tpl->tpl_vars['categoria']->_loop = true;
 ?>
-            <a href="index.php?action=trater_noticias_especificas&id_categoria=<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoriaNoticia'];?>
-" class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['categoria']->value['categoria'];?>
+            <a href="" id="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['categoria'];?>
+"  class="list-group-item categorias"><?php echo $_smarty_tpl->tpl_vars['categoria']->value['categoria'];?>
 </a>
            <?php } ?>
          </div>

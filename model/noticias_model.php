@@ -2,7 +2,6 @@
 require_once 'model.php';
 class noticiasModel extends Model {
 
-
   function traerNoticias()
   {
     $traer=$this->db->prepare("SELECT * FROM noticia");
@@ -21,5 +20,11 @@ class noticiasModel extends Model {
     $noticias->execute(array($id_categoria));
     return $noticias->fetchAll();
   }
+  function mostrarNoticia($id_noticia){
+    $noticia=$this->db->prepare("SELECT * FROM noticia WHERE id_noticia=?");
+    $noticia->execute(array($id_noticia));
+    return $noticia->fetch();
+  }
+
 }
 ?>

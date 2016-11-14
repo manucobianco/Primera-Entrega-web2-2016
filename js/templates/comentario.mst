@@ -1,0 +1,5 @@
+<li class="list-group-item active">Comentarios</li>
+
+{{#coment}}
+  <li class="list-group-item">{{comentario}}</li>
+{{/coment}}

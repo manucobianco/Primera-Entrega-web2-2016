@@ -34,13 +34,14 @@
                           <li><a href="https://twitter.com/cuartetodenos"target="_blank">Twitter</a></li>
                           <li><a href="https://www.youtube.com/user/cuartetodenos"target="_blank">Youtube</a></li>
                           <li class="divider"></li>
+                            <li><a id="lnkComentarios" href="">Comentarios</a></li>
                             <li><a id="lnkOpinion" href="">Envianos tu mail</a></li>
                         </ul>
                        </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="index.php?action=pagina_login">Iniciar Sesion</a></li>
-                  <li><a>Registrate</a></li>
+                  <li><a href="index.php?action=register">Registrate</a></li>
                 </ul>
               </div>
             </div>
@@ -64,5 +65,7 @@
       <script src="js/jquery-2.1.4.min.js"></script>
       <script src="js/bootstrap.js"></script>
       <script src="js/ajax.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
+
     </body>
 </html>

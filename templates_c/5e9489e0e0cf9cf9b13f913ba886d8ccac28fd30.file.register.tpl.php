@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-13 04:59:48
-         compiled from ".\templates\login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:231515827cc76096f75-95537918%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-13 16:59:08
+         compiled from ".\templates\register.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:2264158288b10e40622-00382392%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '0390f83576cc40b989c12a7362afcba143967e43' => 
+    '5e9489e0e0cf9cf9b13f913ba886d8ccac28fd30' => 
     array (
-      0 => '.\\templates\\login.tpl',
-      1 => 1479009568,
+      0 => '.\\templates\\register.tpl',
+      1 => 1479052746,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '231515827cc76096f75-95537918',
+  'nocache_hash' => '2264158288b10e40622-00382392',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5827cc760b67d9_33752006',
+  'unifunc' => 'content_58288b10e75183_82926202',
   'variables' => 
   array (
     'errores' => 0,
@@ -24,12 +24,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5827cc760b67d9_33752006')) {function content_5827cc760b67d9_33752006($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_58288b10e75183_82926202')) {function content_58288b10e75183_82926202($_smarty_tpl) {?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <link rel="icon" href="../../favicon.ico">
-    <title>Iniciar Sesion</title>
+    <title>Registrate</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="css/login.css" rel="stylesheet">
@@ -41,12 +41,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <div class="container">
 
-      <form class="form-signin" method="POST" action="index.php?action=validar_login">
-        <h2 class="form-signin-heading">Acceso</h2>
+      <form class="form-signin" method="POST" action="index.php?action=validar_registro">
+        <h2 class="form-signin-heading">Registrate</h2>
         <label for="txtEmail" class="sr-only">Email</label>
         <input type="email" id="txtEmail" name="txtEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="txtPassword" class="sr-only">Password</label>
-        <input type="password" id="txtPassword" name="txtPassword" class="form-control" placeholder="Password" required>
+        <label for="txtPassword1" class="sr-only">Password</label>
+        <input type="password" id="txtPassword1" name="txtPassword1" class="form-control" placeholder="Password" required>
+        <label for="txtPassword2" class="sr-only">Confirm Password</label>
+        <input type="password" id="txtPassword2" name="txtPassword2" class="form-control" placeholder="Password" required>
         <?php if (count($_smarty_tpl->tpl_vars['errores']->value)>0){?>
           <div class="alert alert-danger" role="alert">
             <strong>No se pudo acceder!</strong>

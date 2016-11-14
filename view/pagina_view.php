@@ -33,6 +33,20 @@ function mostrarPaginaOpinion(){
   $this->smarty->display('opinion.tpl');
 }
 
+function mostrarNoticia($noticia){
+  $this->smarty->assign('noticia',$noticia);
+  $this->smarty->display('noticia.tpl');
+}
+//
+// function mostrarCategoria($id){
+//   $this->smarty->display(id+'.tpl');
+// }
+function mostrarComentarios($comentarios,$emailSession){
+    $this->smarty->assign('emailSession',$emailSession);
+    $this->smarty->assign('comentarios',$comentarios);
+    $this->smarty->display('comentarios.tpl');
+}
+
 }
 
 
