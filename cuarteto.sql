@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2016 a las 05:38:13
+-- Tiempo de generación: 14-11-2016 a las 19:43:36
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.5.38
 
@@ -39,6 +39,42 @@ INSERT INTO `categorianoticia` (`id_categoriaNoticia`, `categoria`) VALUES
 (9, 'Recitales'),
 (10, 'Proximamente'),
 (11, 'Blog');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_comentario` int(11) NOT NULL,
+  `comentario` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id_comentario`, `comentario`) VALUES
+(1, 'este es un comentario de test'),
+(2, 'este tambien'),
+(3, 'dadasdas'),
+(4, 'dadasdas'),
+(5, 'al toke!'),
+(6, ''),
+(7, 'asdasd'),
+(8, 'asdasd'),
+(9, 'asdasd'),
+(10, 'asdasd'),
+(11, 'asdasd'),
+(12, 'asdasd'),
+(13, 'dasd'),
+(14, 'dasd'),
+(15, 'dasd'),
+(16, 'test'),
+(17, 'tes1'),
+(18, 'sadfghjkfdsfghjkhjgfdg'),
+(19, 'zxcvbnm');
 
 -- --------------------------------------------------------
 
@@ -138,7 +174,11 @@ INSERT INTO `opinionusuario` (`id_opinionUsuario`, `nombre`, `email`, `opinion`)
 (3, '', '', ''),
 (4, 'asdasdasdasd', 'dasdas@dasda.casc', 'adsda'),
 (5, '', '', ''),
-(6, 'dasdasm', 'manu@gagsgag.com', 'sdasdas');
+(6, 'dasdasm', 'manu@gagsgag.com', 'sdasdas'),
+(7, 'undefined', 'undefined', 'dasdasd'),
+(8, 'undefined', 'undefined', 'undefined'),
+(9, 'undefined', 'undefined', 'undefined'),
+(10, 'undefined', 'undefined', 'undefined');
 
 -- --------------------------------------------------------
 
@@ -149,15 +189,16 @@ INSERT INTO `opinionusuario` (`id_opinionUsuario`, `nombre`, `email`, `opinion`)
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `tipo` decimal(10,0) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `email`, `password`) VALUES
-(1, 'manucobianco@gmail.com', '$2a$12$KX5wagI1ZYGdUSt1ZVagZu90qCnJSlwOEGmJi5IkQ8dMh95aWPg9S');
+INSERT INTO `usuario` (`id`, `email`, `password`, `tipo`) VALUES
+(1, 'manucobianco@gmail.com', '$2a$12$KX5wagI1ZYGdUSt1ZVagZu90qCnJSlwOEGmJi5IkQ8dMh95aWPg9S', '1');
 
 --
 -- Índices para tablas volcadas
@@ -168,6 +209,12 @@ INSERT INTO `usuario` (`id`, `email`, `password`) VALUES
 --
 ALTER TABLE `categorianoticia`
   ADD PRIMARY KEY (`id_categoriaNoticia`);
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comentario`);
 
 --
 -- Indices de la tabla `disco`
@@ -209,6 +256,11 @@ ALTER TABLE `usuario`
 ALTER TABLE `categorianoticia`
   MODIFY `id_categoriaNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
 -- AUTO_INCREMENT de la tabla `disco`
 --
 ALTER TABLE `disco`
@@ -222,12 +274,12 @@ ALTER TABLE `imagen`
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `opinionusuario`
 --
 ALTER TABLE `opinionusuario`
-  MODIFY `id_opinionUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_opinionUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
