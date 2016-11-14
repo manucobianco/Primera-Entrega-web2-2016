@@ -107,6 +107,22 @@ $("#lnkNoticias").on("click",function(event)
   });
 });
 
+$('#contenido').on('click', "#noticia .volverANoticias",function(event){
+
+  event.preventDefault();
+  $.ajax({
+    url:"index.php?action=mostrar_noticias",
+    method:"GET",
+    dataType:"html",
+    success: function(data){
+      $("#contenido").html(data);
+    },
+    error: function(){
+      alert("No se a podido cargar la info de los noticias. Intente nuevamente mas tarde.");
+    }
+  });
+});
+
 $("#lnkOpinion").on("click",function(event)
 {
   event.preventDefault();

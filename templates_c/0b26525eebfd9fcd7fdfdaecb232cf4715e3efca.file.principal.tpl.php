@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-12 23:22:57
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-14 20:04:07
          compiled from ".\templates\principal.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:11763580ea5226e6ea4-47109670%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3313582a0aa7e8f721-93307826%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11763580ea5226e6ea4-47109670',
+  'nocache_hash' => '3313582a0aa7e8f721-93307826',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_580ea5228002e9_85339436',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_582a0aa7eca794_53819582',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_580ea5228002e9_85339436')) {function content_580ea5228002e9_85339436($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_582a0aa7eca794_53819582')) {function content_582a0aa7eca794_53819582($_smarty_tpl) {?>
       <img class="ImgContenido" src="images/rataVioleta.png" alt="Logo">
       <p><El Cuarteto de Nos es un grupo de rock alternativo uruguayo, formado por Roberto Musso, Santiago Tavella, Alvaro Pintos, Santiago Marrero y Gustavo Antu&ntilde;a, en el a&ntilde;o 1984 en Montevideo, Uruguay.</p>
       <p>La idea de El Cuarteto de Nos viene mucho antes de que ellos quieran hacer m&uacute;sica, sal&iacute;a de un juego de pre-adolescentes y adolescentes entre los hermanos Musso (Roberto y Ricardo) quienes jugaban a crear la ciudad imaginaria llamada "Tajo", con todos los poetas y personajes que luego se convertir&iacute;an en los protagonistas de sus canciones. Luego se sum&oacute; Santiago Tavella al juego.</p>

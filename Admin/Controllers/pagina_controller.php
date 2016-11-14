@@ -14,37 +14,97 @@ class PaginaController{
     $this->modelNoticia=new NoticiaModel();
     $this->modelCategoria=new CategoriaModel();
     $this->modelImagen=new ImagenModel();
+    session_start();
   }
   //Navegacion
     function mostrarHome(){
-      $this->view->mostrarHome($this->modelOpinion->getOpiniones());
+      if(isset($_SESSION["email"])){
+        $this->view->mostrarHome($this->modelOpinion->getOpiniones());
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
+
     function mostrarPrincipal(){
-      $this->view->mostrarPrincipal($this->modelOpinion->getOpiniones());
+      if(isset($_SESSION["email"])){
+          $this->view->mostrarPrincipal($this->modelOpinion->getOpiniones());
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
+
     function mostrarAdmin(){
-      $this->view->mostrarAdmin($this->modelOpinion->getOpiniones());
+      if(isset($_SESSION["email"])){
+        $this->view->mostrarAdmin($this->modelOpinion->getOpiniones());
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
+
     function mostrarCargarNoticia(){
-      $this->view->mostrarCargarNoticia($this->modelCategoria->getCategorias(),$this->modelNoticia->getNoticias());
+      if(isset($_SESSION["email"])){
+        $this->view->mostrarCargarNoticia($this->modelCategoria->getCategorias(),$this->modelNoticia->getNoticias());
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
+
     function mostrarCargarImagenes(){
-      $this->view->mostrarCargarImagenes($this->modelImagen->getImagenes());
+      if(isset($_SESSION["email"])){
+        $this->view->mostrarCargarImagenes($this->modelImagen->getImagenes());
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
+
     function mostrarCrearCategoria(){
-      $this->view->mostrarCrearCategoria($this->modelCategoria->getCategorias());
+      if(isset($_SESSION["email"])){
+        $this->view->mostrarCrearCategoria($this->modelCategoria->getCategorias());
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
+
     function mostrarCargarDisco(){
-      $this->view->mostrarCargarDisco($this->modelDisco->getDiscos());
+      if(isset($_SESSION["email"])){
+        $this->view->mostrarCargarDisco($this->modelDisco->getDiscos());
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
+
     function mostrarModificarDisco(){
-      $this->view->mostrarModificarDisco($_REQUEST['id_disco'],$_REQUEST['nombre'],$_REQUEST['anio'],$_REQUEST['discografica']);
+      if(isset($_SESSION["email"])){
+          $this->view->mostrarModificarDisco($_REQUEST['id_disco'],$_REQUEST['nombre'],$_REQUEST['anio'],$_REQUEST['discografica']);
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
+
     function mostrarModificarNoticia(){
-      $this->view->mostrarModificarNoticia($_REQUEST['id_noticia'],$_REQUEST['nombre'],$_REQUEST['contenido'],$this->modelCategoria->getCategorias());
+      if(isset($_SESSION["email"])){
+        $this->view->mostrarModificarNoticia($_REQUEST['id_noticia'],$_REQUEST['nombre'],$_REQUEST['contenido'],$this->modelCategoria->getCategorias());
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
+
     function mostrarModificarCategoria(){
+      if(isset($_SESSION["email"])){
       $this->view->mostrarModificarCategoria($_REQUEST['id_categoriaNoticia'],$_REQUEST['categoria']);
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
     }
 
 

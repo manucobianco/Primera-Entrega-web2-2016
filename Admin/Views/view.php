@@ -16,7 +16,8 @@ function mostrarHome(){
   $this->smarty->display('index.tpl');
 }
 function mostrarAdmin($opiniones){
-    $this->smarty->assign('opiniones',$opiniones);
+  $this->smarty->assign('email',$_SESSION["email"]);
+  $this->smarty->assign('opiniones',$opiniones);
   $this->smarty->display('admin.tpl');
 }
 
@@ -24,7 +25,7 @@ function mostrarError($error){
   array_push($this->errores, $error);
 }
 function mostrarPrincipal($opiniones){
-    $this->smarty->assign('opiniones',$opiniones);
+  $this->smarty->assign('opiniones',$opiniones);
   $this->smarty->display('principal.tpl');
 }
 function mostrarCargarNoticia($categorias,$noticias){

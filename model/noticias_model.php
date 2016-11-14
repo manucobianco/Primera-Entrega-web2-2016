@@ -23,6 +23,7 @@ class noticiasModel extends Model {
   function mostrarNoticia($id_noticia){
     $noticia=$this->db->prepare("SELECT * FROM noticia WHERE id_noticia=?");
     $noticia->execute(array($id_noticia));
+  //  print_r($noticia->fetch());
     return $noticia->fetch();
   }
 

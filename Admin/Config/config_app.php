@@ -2,6 +2,9 @@
 
 class ConfigApp {
 //ADMIN
+  public static $ACTION_PAGINA_LOGIN = 'pagina_login';
+  public static $ACTION_VALIDAR_LOGIN = 'validar_login';
+  public static $ACTION_LOGOUT = 'logout';
   public static $ACTION = 'action';
 //Navegacion
   public static $ACTION_DEFAULT = 'mostrar_home';

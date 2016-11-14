@@ -39,13 +39,12 @@ td, th{
 .carousel .item > img {
 	display: inline-block;
 	}
-
-	.carousel-control.left, .carousel-control.right {
+.carousel-control.left, .carousel-control.right {
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, transparent 100%);
-	}
+}
+
 li{
 	list-style-type: none;
 	text-align: center;
-	
-}
 
+}

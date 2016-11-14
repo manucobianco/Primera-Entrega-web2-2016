@@ -21,6 +21,9 @@
   <body>
     <div class="container">
       <img src="images/rataBlanca.png"/>
+      <ul>
+        <li id="saludarAdmin" class="nav navbar-nav navbar-right">Hola <b>{$email}</b> ! <a href="index.php?action=logout">Log Out</a></li>
+      </ul>
     </div>
     {block name="wrap"}
     <div class="container" id="wrap">
@@ -43,7 +46,6 @@
     <script src="js/jquery-2.1.4.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/admin.js" type="text/javascript"></script>
-
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
