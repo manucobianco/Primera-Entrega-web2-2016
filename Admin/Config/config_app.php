@@ -9,6 +9,7 @@ class ConfigApp {
   public static $ACTION_MOSTRAR_CARGAR_IMAGENES='mostrar_cargar_imagenes';
   public static $ACTION_MOSTRAR_CREAR_CATEGORIA='mostrar_crear_categoria';
   public static $ACTION_MOSTRAR_CARGAR_DISCO='mostrar_cargar_disco';
+  public static $ACTION_MOSTRAR_CARGAR_USUARIO= 'mostrar_cargar_usuario';
   public static $ACTION_MOSTRAR_MODIFICAR_DISCO='mostrar_modificar_disco';
   public static $ACTION_MOSTRAR_MODIFICAR_NOTICIA='mostrar_modificar_noticia';
   public static $ACTION_MOSTRAR_MODIFICAR_CATEGORIA='mostrar_modificar_categoria';
@@ -30,6 +31,7 @@ class ConfigApp {
   public static $ACTION_MODIFICAR_NOTICIA='modificar_noticia';
   public static $ACTION_MODIFICAR_CATEGORIA='modificar_categoria';
   public static $ACTION_MODIFICAR_DISCO='modificar_disco';
+  public static $ACTION_MODIFICAR_USUARIO='modificar_usuario';
 
 }
  ?>

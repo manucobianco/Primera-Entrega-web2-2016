@@ -44,6 +44,10 @@ function mostrarCargarDisco($discos){
   $this->smarty->assign('discos',$discos);
   $this->smarty->display('cargarDisco.tpl');
 }
+function mostrarCargarUsuario($usuarios){
+  $this->smarty->assign('usuarios',$usuarios);
+  $this->smarty->display('cargarUsuario.tpl');
+}
 function mostrarModificarDisco($id_disco,$nombre,$anio,$discografica){
   $this->smarty->assign('id_disco',$id_disco);
   $this->smarty->assign('nombre',$nombre);

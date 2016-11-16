@@ -64,5 +64,11 @@ $("#crearCategoria").click(function(event){
     borrarActivo();
     $("#crearCategoria").addClass("active");
 });
+$("#cargarUsuario").click(function(event){
+  event.preventDefault();
+  cargarContenido("cargar_usuario","Administracion-Administrar Usuarios");
+  borrarActivo();
+  $("#cargarUsuario").addClass("active");
+});
 
 });

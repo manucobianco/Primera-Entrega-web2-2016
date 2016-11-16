@@ -6,6 +6,7 @@ include_once 'Controllers/noticia_controller.php';
 include_once 'Controllers/disco_controller.php';
 include_once 'Controllers/imagen_controller.php';
 include_once 'Controllers/opinion_controller.php';
+include_once 'Controllers/usuario_controller.php';
 
 
 //Tenga la clave action
@@ -41,6 +42,10 @@ else {
     case ConfigApp::$ACTION_MOSTRAR_CARGAR_DISCO:
       $controller = new PaginaController();
       $controller->mostrarCargarDisco();
+      break;
+    case ConfigApp::$ACTION_MOSTRAR_CARGAR_USUARIO:
+      $controller = new PaginaController();
+      $controller->mostrarCargarUsuario();
       break;
     case ConfigApp::$ACTION_MOSTRAR_MODIFICAR_DISCO:
       $controller = new PaginaController();
@@ -106,6 +111,10 @@ else {
     case ConfigApp::$ACTION_MODIFICAR_DISCO:
       $controller= new DiscoController();
       $controller->modificarDisco();
+      break;
+    case ConfigApp::$ACTION_MODIFICAR_USUARIO:
+      $controller= new UsuarioController();
+      $controller->modificarPermisos();
       break;
 
     default:

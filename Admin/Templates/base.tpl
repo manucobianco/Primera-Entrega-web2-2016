@@ -30,6 +30,7 @@
         <li role="presentation" id="cargarNoticias"><a class="cargar-noticia" href="#">Administrar Noticias</a></li>
         <li role="presentation"id="crearCategoria"><a class="crear-categoria" href="#">Administrar Categorias</a></li>
         <li role="presentation"id="cargarDisco"><a class="cargar-disco" href="#">Administrar Discos</a></li>
+        <li role="presentation"id="cargarUsuario"><a class="cargar-usuario" href="#">Administrar Usuarios</a></li>
       </ul>
       <div id="contenido">
         <h1 class="page-header">Pagina de Administracion</h1>

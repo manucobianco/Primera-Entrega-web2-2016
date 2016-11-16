@@ -5,6 +5,7 @@ include_once 'Models/disco_model.php';
 include_once 'Models/noticia_model.php';
 include_once 'Models/opinion_model.php';
 include_once 'Models/imagen_model.php';
+include_once 'Models/usuario_model.php';
 
 class PaginaController{
   function __construct() {
@@ -14,6 +15,7 @@ class PaginaController{
     $this->modelNoticia=new NoticiaModel();
     $this->modelCategoria=new CategoriaModel();
     $this->modelImagen=new ImagenModel();
+    $this->modelUsuario=new UsuarioModel();
   }
   //Navegacion
     function mostrarHome(){
@@ -36,6 +38,9 @@ class PaginaController{
     }
     function mostrarCargarDisco(){
       $this->view->mostrarCargarDisco($this->modelDisco->getDiscos());
+    }
+    function mostrarCargarUsuario(){
+      $this->view->mostrarCargarUsuario($this->modelUsuario->getUsuarios());
     }
     function mostrarModificarDisco(){
       $this->view->mostrarModificarDisco($_REQUEST['id_disco'],$_REQUEST['nombre'],$_REQUEST['anio'],$_REQUEST['discografica']);

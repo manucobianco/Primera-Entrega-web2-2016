@@ -294,5 +294,16 @@ $("#btnModificarNoticia").click(function(event){
   }
   window.close();
 });
+$(".modificar-usuario").click(function(event) {
+  event.preventDefault();
+  var src=$(this).attr("href");
+  $.ajax({
+     type : "GET"
+    ,url : src
+    ,complete:function(){
+      cargarContenido("cargar_usuario","Administracion-Administrar Usuario");
+    }
+  });
+});
 
 });
