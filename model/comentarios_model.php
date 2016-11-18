@@ -1,6 +1,6 @@
 <?php
 require_once 'model.php';
-class comentariosModel extends Model {
+class ComentariosModel extends Model {
 
   function mostrarComentarios(){
     $comentarios=$this->db->prepare("SELECT * FROM comentario");
@@ -14,9 +14,9 @@ class comentariosModel extends Model {
     return $comentarios->rowCount();
   }
 
-  function crearComentario($comentario){
-    $coment = $this->db->prepare("INSERT INTO comentario (comentario) VALUES (?) ");
-    $coment->execute(array($comentario));
+  function crearComentario($comentario,$id_usuario,$id_noticia){
+    $coment = $this->db->prepare("INSERT INTO comentario (comentario,fk_id_usuario,fk_id_noticia) VALUES (?,?,?) ");
+    $coment->execute(array($comentario,$id_usuario,$id_noticia));
     return $coment->rowCount();
   }
 }

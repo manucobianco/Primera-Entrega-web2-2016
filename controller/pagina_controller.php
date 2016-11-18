@@ -4,7 +4,7 @@ include_once 'model/discos_model.php';
 include_once 'model/noticias_model.php';
 
 
-class paginaController {
+class PaginaController {
 
   private $discos_model;
   private $noticias_model;
@@ -12,9 +12,9 @@ class paginaController {
   private $view;
 
   function __construct() {
-    $this->discos_model = new discosModel();
-    $this->noticias_model = new noticiasModel();
-    $this->view = new paginaView();
+    $this->discos_model = new DiscosModel();
+    $this->noticias_model = new NoticiasModel();
+    $this->view = new PaginaView();
 
       }
 

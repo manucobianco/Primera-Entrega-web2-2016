@@ -2,14 +2,14 @@
 require 'api.php';
 require '../model/comentarios_model.php';
 
-class comentariosApi extends Api
+class ComentariosApi extends Api
 {
   private $model;
 
   public function __construct($request)
  {
     parent::__construct($request);
-    $this->model = new comentariosModel();
+    $this->model = new ComentariosModel();
   }
 
   protected function comentario(){

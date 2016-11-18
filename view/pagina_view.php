@@ -1,7 +1,7 @@
 <?php
 include_once 'libs/Smarty.class.php';
 
-class paginaView {
+class PaginaView {
   private $smarty;
   private $errores;
 

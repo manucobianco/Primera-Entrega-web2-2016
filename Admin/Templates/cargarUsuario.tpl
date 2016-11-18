@@ -24,7 +24,7 @@
                 {/if}
               </td>
               <td>
-                <a class="glyphicon glyphicon-edit modificar-usuario" href="index.php?action=modificar_usuario&id_usuario={$usuario['id']}"></a>
+                <a class="glyphicon glyphicon-edit modificar-usuario" href="index.php?action=modificar_usuario&id_usuario={$usuario['id_usuario']}"></a>
               </td>
             </tr>
         {/foreach}

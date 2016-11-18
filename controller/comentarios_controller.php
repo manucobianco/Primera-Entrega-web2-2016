@@ -2,15 +2,15 @@
 include_once 'view/pagina_view.php';
 include_once 'model/comentarios_model.php';
 
-class comentariosController  {
+class ComentariosController  {
 
   private $view;
   private $model;
 
 
   function __construct() {
-    $this->model = new comentariosModel();
-    $this->view = new paginaView();
+    $this->model = new ComentariosModel();
+    $this->view = new PaginaView();
   }
 
   function mostrarComentarios(){

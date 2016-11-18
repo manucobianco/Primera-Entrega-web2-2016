@@ -32,6 +32,12 @@
           Contenido
         </th>
         <th>
+          Puntaje
+        </th>
+        <th>
+          Cantidad de votos
+        </th>
+        <th>
           Accion
         </th>
     </thead>
@@ -44,6 +50,8 @@
           <tr>
             <td>{$noticia['nombre']}</td>
             <td>{$noticia['contenido']}</td>
+            <td>{$noticia['puntaje']}</td>
+            <td>{$noticia['cantidadvotos']}</td>
             <td>
               <a class="glyphicon glyphicon-trash borrar-noticia"href="index.php?action=borrar_noticia&id_noticia={$noticia['id_noticia']}"></a>
               <a class="glyphicon glyphicon-edit mostrar-modificar-noticia" href="index.php?action=mostrar_modificar_noticia&id_noticia={$noticia['id_noticia']}&nombre={$noticia['nombre']}&contenido={$noticia['contenido']} "></a>
@@ -53,7 +61,7 @@
       {/foreach}
       {if $hayNoticias==false}
       <tr>
-        <td align="center"colspan="3">
+        <td align="center"colspan="5">
           <b>No hay noticias en esta categoria.</b>
         </td>
       </tr>

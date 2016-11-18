@@ -8,7 +8,7 @@ class UsuarioModel extends Model{
     return $consulta->fetchAll();
   }
   function getUsuarioById($id){
-    $consulta = $this->db->prepare("SELECT * FROM usuario WHERE id=?");
+    $consulta = $this->db->prepare("SELECT * FROM usuario WHERE id_usuario=?");
     $consulta->execute(array($id));
     return $consulta->fetch();
   }
@@ -16,9 +16,9 @@ class UsuarioModel extends Model{
     $usuario= $this->getUsuarioById($id);
     $SQL="";
     if ($usuario['tipo']==1){
-      $SQL="UPDATE usuario SET tipo=2 WHERE id=?";
+      $SQL="UPDATE usuario SET tipo=2 WHERE id_usuario=?";
     }else{
-      $SQL="UPDATE usuario SET tipo=1 WHERE id=?";
+      $SQL="UPDATE usuario SET tipo=1 WHERE id_usuario=?";
     }
     $consulta = $this->db->prepare($SQL);
     $consulta->execute(array($id));

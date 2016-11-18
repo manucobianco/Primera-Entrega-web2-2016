@@ -3,16 +3,16 @@
   include_once 'view/register_view.php';
   include_once 'model/usuario_model.php';
 
-  class usuarioController {
+  class UsuarioController {
 
     private $model;
     private $login_view;
     private $register_view;
 
     function __construct() {
-      $this->model = new usuarioModel();
-      $this->login_view = new loginView();
-      $this->register_view = new registerView();
+      $this->model = new UsuarioModel();
+      $this->login_view = new LoginView();
+      $this->register_view = new RegisterView();
         }
 
     function mostrarLogin(){

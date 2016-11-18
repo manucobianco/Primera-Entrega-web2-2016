@@ -1,6 +1,6 @@
 <?php
 require_once 'model.php';
-class discosModel extends Model {
+class DiscosModel extends Model {
 
   function traerDiscos(){
 
