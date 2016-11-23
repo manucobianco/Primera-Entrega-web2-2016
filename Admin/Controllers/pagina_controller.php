@@ -4,7 +4,9 @@ include_once 'Models/categoria_model.php';
 include_once 'Models/disco_model.php';
 include_once 'Models/noticia_model.php';
 include_once 'Models/opinion_model.php';
-include_once 'Models/imagen_model.php';
+include_once 'Models/imagen_noticia_model.php';
+include_once 'Models/usuario_model.php';
+
 
 class PaginaController{
   function __construct() {
@@ -13,7 +15,8 @@ class PaginaController{
     $this->modelDisco=new DiscoModel();
     $this->modelNoticia=new NoticiaModel();
     $this->modelCategoria=new CategoriaModel();
-    $this->modelImagen=new ImagenModel();
+    $this->modelUsuario=new UsuarioModel();
+    $this->modelImagenNoticia= new ImagenNoticiaModel();
     session_start();
   }
   //Navegacion
@@ -53,15 +56,6 @@ class PaginaController{
       }
     }
 
-    function mostrarCargarImagenes(){
-      if(isset($_SESSION["email"])){
-        $this->view->mostrarCargarImagenes($this->modelImagen->getImagenes());
-      }else{
-        header("Location: index.php?action=pagina_login");
-        die();
-      }
-    }
-
     function mostrarCrearCategoria(){
       if(isset($_SESSION["email"])){
         $this->view->mostrarCrearCategoria($this->modelCategoria->getCategorias());
@@ -80,6 +74,15 @@ class PaginaController{
       }
     }
 
+    function mostrarCargarUsuario(){
+      if(isset($_SESSION["email"])){
+        $this->view->mostrarCargarUsuario($this->modelUsuario->getUsuarios());
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
+    }
+
     function mostrarModificarDisco(){
       if(isset($_SESSION["email"])){
           $this->view->mostrarModificarDisco($_REQUEST['id_disco'],$_REQUEST['nombre'],$_REQUEST['anio'],$_REQUEST['discografica']);
@@ -91,7 +94,7 @@ class PaginaController{
 
     function mostrarModificarNoticia(){
       if(isset($_SESSION["email"])){
-        $this->view->mostrarModificarNoticia($_REQUEST['id_noticia'],$_REQUEST['nombre'],$_REQUEST['contenido'],$this->modelCategoria->getCategorias());
+        $this->view->mostrarModificarNoticia($_REQUEST['id_noticia'],$_REQUEST['nombre'],$_REQUEST['contenido'],$this->modelCategoria->getCategorias(),$_REQUEST['subTitulo']);
       }else{
         header("Location: index.php?action=pagina_login");
         die();
@@ -106,6 +109,15 @@ class PaginaController{
         die();
       }
     }
+
+    function mostrarImagenesNoticia(){
+      if(isset($_SESSION["email"])){
+        $this->view->mostrarImagenesNoticia($this->modelImagenNoticia->getImagenesById($_REQUEST['fk_id_noticia']));
+      }else{
+        header("Location: index.php?action=pagina_login");
+        die();
+      }
+  }
 
 
 }

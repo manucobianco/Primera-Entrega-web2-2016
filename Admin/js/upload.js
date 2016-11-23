@@ -44,18 +44,9 @@ $("#form-imagen").submit(function(event){
   });
 
 });
-$("#btnCargarNoticia").click(function(ev){
+$("#form-noticia").submit(function(ev){
   ev.preventDefault();
-  var datos = new FormData();
-  var titulo =  $("#inputTituloNoticia").val();
-  datos.append("titulo",titulo);
-
-  var contenido =  $("#txtNoticia").val();
-  datos.append("contenido",contenido);
-
-  var categoria =  $("#categoria").val();
-  datos.append("categoria",categoria);
-  if(titulo!="" && contenido!=""){
+  var datos = new FormData($("#form-noticia")[0]);
     $.ajax({
        type : "POST"
       ,dataType : "json"
@@ -64,13 +55,11 @@ $("#btnCargarNoticia").click(function(ev){
       ,cache: false
       ,processData: false // No procesar los archivos
       ,contentType: false // Con false, jQuery selecciona automaticamente el tipo
-      ,complete:function(){
-      cargarContenido("cargar_noticia","Administracion-Administrar Imagenes");
-        alert("se cargaron los datos.");} // Con false, jQuery selecciona automaticamente el tipo
+      ,complete:function(data){
+        cargarContenido("cargar_noticia","Administracion-Administrar Imagenes");
+        console.log(data);} // Con false, jQuery selecciona automaticamente el tipo
     });
-  }else {
-    alert("Por favor complete todos los campos.");
-  }
+
 });
 $("#btnCrearCategoria").click(function(ev){
   ev.preventDefault();
@@ -182,6 +171,26 @@ $(".borrar-opinion").click(function(event) {
       alert("se borro la opinion.");} // Con false, jQuery selecciona automaticamente el tipo
   });
 });
+$(".borrar-imagen-noticia").click(function(ev){
+    ev.preventDefault();
+    var src=$(this).attr("href");
+    var id=$("#id-noticia").val();
+    $.ajax({
+       type : "GET"
+      ,url : src
+      ,success:function(data){
+        alert("se borro la imagen.");
+        var rendered;
+        $.ajax({ type : "GET"
+        ,url : "index.php?action=mostrar_imagenes_noticia&fk_id_noticia="+id
+        ,success:function(renderedTemplate){
+          rendered= renderedTemplate;
+          $("#tablaImagenes").html(rendered);
+        }});
+
+      } // Con false, jQuery selecciona automaticamente el tipo
+    });
+});
 
 $(".mostrar-modificar-categoria").click(function(event){
   event.preventDefault();
@@ -263,21 +272,9 @@ $(".mostrar-modificar-noticia").click(function(event){
   }
 });
 
-$("#btnModificarNoticia").click(function(event){
+$("#form-modificar-noticia").submit(function(event){
   event.preventDefault();
-  var datos = new FormData();
-  var titulo =  $("#inputTituloNoticia").val();
-  datos.append("nombre",titulo);
-
-  var contenido =  $("#txtNoticia").val();
-  datos.append("contenido",contenido);
-
-  var categoria =  $("#categoria").val();
-  datos.append("categoria",categoria);
-
-  var id_noticia= $("#id-noticia").val();
-  datos.append("id_noticia",id_noticia);
-  if(titulo!="" && contenido!=""){
+  var datos = new FormData($("#form-modificar-noticia")[0]);
     $.ajax({
        type : "POST"
       ,dataType : "json"
@@ -289,10 +286,19 @@ $("#btnModificarNoticia").click(function(event){
       ,complete:function(){alert("se cargaron los datos.");} // Con false, jQuery selecciona automaticamente el tipo
 
     });
-  }else {
-    alert("Por favor complete todos los campos.");
-  }
+
   window.close();
+});
+$(".modificar-usuario").click(function(event) {
+  event.preventDefault();
+  var src=$(this).attr("href");
+  $.ajax({
+     type : "GET"
+    ,url : src
+    ,complete:function(){
+      cargarContenido("cargar_usuario","Administracion-Administrar Usuario");
+    }
+  });
 });
 
 });

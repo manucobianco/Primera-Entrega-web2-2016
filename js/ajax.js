@@ -9,7 +9,7 @@ function recargarComentarios(id_noticia){
     }
   )
 //  $.get(api/comentario); DESPUES VER ASI
-} 
+}
 
 function mostrarComentarios(aux){
     // for (var i = 0; i < comantarios.length; i++) {//comantarios
@@ -201,6 +201,7 @@ $('#contenido').on('click', "#btnEnviarComentario",function(eve){
       alert("Tiene que asignar una valoracion");
     }
 });
+
 $('#contenido').on('click', ".borrarComentarios",function(eve){
   eve.preventDefault();
 

@@ -1,5 +1,6 @@
 <?php
 include_once 'Models/noticia_model.php';
+include_once 'Models/imagen_noticia_model.php';
 include_once 'Views/view.php';
 /**
  *
@@ -7,21 +8,29 @@ include_once 'Views/view.php';
 class NoticiaController
 {
   private $modelNoticia;
+  private $modelImagenNoticia;
   function __construct()
   {
     $this->modelNoticia=new NoticiaModel();
+    $this->modelImagenNoticia= new ImagenNoticiaModel();
   }
   function cargarNoticia(){
-      $this->modelNoticia->cargarNoticia($_REQUEST['titulo'],$_REQUEST['contenido'],$_REQUEST['categoria']);
-      $this->view->mostrarCargarNoticia();
+      if (isset($_FILES['imagen'])){
+        $this->modelNoticia->cargarNoticia($_REQUEST['inputTituloNoticia'],$_REQUEST['txtNoticia'],$_REQUEST['categoria'],$_FILES['imagen']);
+      }else {
+        $this->modelNoticia->cargarNoticia($_REQUEST['inputTituloNoticia'],$_REQUEST['txtNoticia'],$_REQUEST['categoria']);
+      }
   }
   function borrarNoticia(){
-
       $this->modelNoticia->borrarNoticia($_REQUEST['id_noticia']);
-      $this->mostrarCargarNoticia();
+      $this->modelImagenNoticia->borrarImagenById($_REQUEST['id_noticia']);
   }
   function modificarNoticia(){
-      $this->modelNoticia->modificarNoticia($_REQUEST['id_noticia'],$_REQUEST['nombre'],$_REQUEST['contenido'],$_REQUEST['categoria']);
+    if (isset($_FILES['imagen'])){
+      $this->modelNoticia->modificarNoticia($_REQUEST['id-noticia'],$_REQUEST['inputTituloNoticia'],$_REQUEST['txtNoticia'],$_REQUEST['categoria'],$_FILES['imagen']);
+    }else {
+      $this->modelNoticia->modificarNoticia($_REQUEST['id-noticia'],$_REQUEST['inputTituloNoticia'],$_REQUEST['txtNoticia'],$_REQUEST['categoria']);
+    }
   }
 }
 

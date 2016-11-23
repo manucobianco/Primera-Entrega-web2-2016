@@ -4,8 +4,9 @@ include_once 'Controllers/pagina_controller.php';
 include_once 'Controllers/categoria_controller.php';
 include_once 'Controllers/noticia_controller.php';
 include_once 'Controllers/disco_controller.php';
-include_once 'Controllers/imagen_controller.php';
 include_once 'Controllers/opinion_controller.php';
+include_once 'Controllers/usuario_controller.php';
+include_once 'Controllers/imagen_noticia_controller.php';
 include_once 'Controllers/admin_controller.php';
 
 //Tenga la clave action
@@ -43,6 +44,10 @@ else {
       $controller = new PaginaController();
       $controller->mostrarCargarDisco();
       break;
+    case ConfigApp::$ACTION_MOSTRAR_CARGAR_USUARIO:
+      $controller = new PaginaController();
+      $controller->mostrarCargarUsuario();
+      break;
     case ConfigApp::$ACTION_MOSTRAR_MODIFICAR_DISCO:
       $controller = new PaginaController();
       $controller->mostrarModificarDisco();
@@ -55,6 +60,11 @@ else {
       $controller = new PaginaController();
       $controller->mostrarModificarCategoria();
       break;
+    case ConfigApp::$ACTION_MOSTRAR_IMAGENES_NOTICIA:
+      $controller = new PaginaController();
+      $controller->mostrarImagenesNoticia();
+      break;
+
 
 //ABM
 //Altas
@@ -83,6 +93,10 @@ else {
       $controller= new ImagenController();
       $controller->borrarImagen();
       break;
+    case ConfigApp::$ACTION_BORRAR_IMAGEN_NOTICIA:
+      $controller= new ImagenNoticiaController();
+      $controller->borrarImagenNoticia();
+      break;
     case ConfigApp::$ACTION_BORRAR_NOTICIA:
       $controller= new NoticiaController();
       $controller->borrarNoticia();
@@ -107,6 +121,10 @@ else {
     case ConfigApp::$ACTION_MODIFICAR_DISCO:
       $controller= new DiscoController();
       $controller->modificarDisco();
+      break;
+    case ConfigApp::$ACTION_MODIFICAR_USUARIO:
+      $controller= new UsuarioController();
+      $controller->modificarPermisos();
       break;
   //admin
     case ConfigApp::$ACTION_PAGINA_LOGIN:
