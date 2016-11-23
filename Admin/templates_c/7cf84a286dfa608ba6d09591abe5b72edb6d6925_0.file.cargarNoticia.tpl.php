@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-10-25 02:31:34
+<?php /* Smarty version 3.1.27, created on 2016-11-22 04:25:25
          compiled from "D:\xampp\htdocs\Primera-Entrega-web2-2016\Admin\templates\cargarNoticia.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:30631580ea7e6399251_09316420%%*/
+/*%%SmartyHeaderCode:281855833baa5b6f786_79083458%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7cf84a286dfa608ba6d09591abe5b72edb6d6925' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Primera-Entrega-web2-2016\\Admin\\templates\\cargarNoticia.tpl',
-      1 => 1477354188,
+      1 => 1479785096,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '30631580ea7e6399251_09316420',
+  'nocache_hash' => '281855833baa5b6f786_79083458',
   'variables' => 
   array (
     'categorias' => 0,
@@ -24,22 +24,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_580ea7e6664076_73141659',
+  'unifunc' => 'content_5833baa5d7ed75_17563187',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_580ea7e6664076_73141659')) {
-function content_580ea7e6664076_73141659 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5833baa5d7ed75_17563187')) {
+function content_5833baa5d7ed75_17563187 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '30631580ea7e6399251_09316420';
+$_smarty_tpl->properties['nocache_hash'] = '281855833baa5b6f786_79083458';
 ?>
     <h1 class="page-header">Cargar Noticia</h1>
-    <form action="#" method="GET"enctype="multipart/form-data">
+    <form id="form-noticia" method="POST"enctype="multipart/form-data">
       <div class="form-group">
         <label for="inputTituloNoticia">Titulo Noticia</label>
         <input type="text" class="form-control" id="inputTituloNoticia"name="inputTituloNoticia" placeholder="Titulo de la Noticia" required>
       </div>
       <div class="form-group">
         <textarea class="form-control" rows="3" id="txtNoticia"name="txtNoticia" placeholder="Contenido de la Noticia"required></textarea>
+      </div>
+      <div class="form-group">
+        <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+        <label for="inputFile">Cargar Imagenes</label>
+        <input type="file" id="input-imagen"name="imagen[]" multiple="multiple">
+        <p class="help-block">tipos de imagen admitidas: .gif .png .jpg .jpeg</p>
       </div>
       <label for="categoria">Categoria</label>
       <select class="form-control" id="categoria"name="categoria">
@@ -93,6 +99,12 @@ $foreach_categoria_Sav = $_smarty_tpl->tpl_vars['categoria'];
           Contenido
         </th>
         <th>
+          Puntaje
+        </th>
+        <th>
+          Cantidad de votos
+        </th>
+        <th>
           Accion
         </th>
     </thead>
@@ -117,6 +129,10 @@ $foreach_noticia_Sav = $_smarty_tpl->tpl_vars['noticia'];
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['noticia']->value['contenido'];?>
 </td>
+            <td><?php echo $_smarty_tpl->tpl_vars['noticia']->value['puntaje'];?>
+</td>
+            <td><?php echo $_smarty_tpl->tpl_vars['noticia']->value['cantidadvotos'];?>
+</td>
             <td>
               <a class="glyphicon glyphicon-trash borrar-noticia"href="index.php?action=borrar_noticia&id_noticia=<?php echo $_smarty_tpl->tpl_vars['noticia']->value['id_noticia'];?>
 "></a>
@@ -133,7 +149,7 @@ $_smarty_tpl->tpl_vars['noticia'] = $foreach_noticia_Sav;
 ?>
       <?php if ($_smarty_tpl->tpl_vars['hayNoticias']->value == false) {?>
       <tr>
-        <td align="center"colspan="3">
+        <td align="center"colspan="5">
           <b>No hay noticias en esta categoria.</b>
         </td>
       </tr>

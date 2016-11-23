@@ -55,11 +55,12 @@ function mostrarModificarDisco($id_disco,$nombre,$anio,$discografica){
   $this->smarty->assign('discografica',$discografica);
   $this->smarty->display('modificarDisco.tpl');
 }
-function mostrarModificarNoticia($id_noticia,$titulo,$contenido,$categorias){
+function mostrarModificarNoticia($id_noticia,$titulo,$contenido,$categorias,$imagenes){
   $this->smarty->assign('id_noticia',$id_noticia);
   $this->smarty->assign('titulo',$titulo);
   $this->smarty->assign('contenido',$contenido);
   $this->smarty->assign('categorias',$categorias);
+  $this->smarty->assign('imagenes',$imagenes);
   $this->smarty->display('modificarNoticia.tpl');
 }
 function mostrarModificarCategoria($id_categoria,$categoria){
@@ -67,7 +68,10 @@ function mostrarModificarCategoria($id_categoria,$categoria){
   $this->smarty->assign('categoria',$categoria);
   $this->smarty->display('modificarCategoria.tpl');
 }
-
+function mostrarImagenesNoticia($imagenes){
+  $this->smarty->assign('imagenes',$imagenes);
+  $this->smarty->display('imagenesNoticia.tpl');
+}
 
 }
 

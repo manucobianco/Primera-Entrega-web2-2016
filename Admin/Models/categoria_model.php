@@ -23,8 +23,6 @@ class CategoriaModel extends Model{
       return 'No se Agrego';
   }
   function borrarCategoria($id_categoria){
-    $c=$this->db->prepare("DELETE FROM noticia WHERE fk_id_categoriaNoticia=?");
-    $c->execute(array($id_categoria));
     $consulta = $this->db->prepare('DELETE FROM categoriaNoticia WHERE id_categoriaNoticia=?');
     $consulta->execute(array($id_categoria));
   }

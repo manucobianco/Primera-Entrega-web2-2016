@@ -16,7 +16,7 @@ class UsuarioModel extends Model{
     $usuario= $this->getUsuarioById($id);
     $SQL="";
     if ($usuario['tipo']==1){
-      $SQL="UPDATE usuario SET tipo=2 WHERE id_usuario=?";
+      $SQL="UPDATE usuario SET tipo=0 WHERE id_usuario=?";
     }else{
       $SQL="UPDATE usuario SET tipo=1 WHERE id_usuario=?";
     }

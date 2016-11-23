@@ -5,6 +5,7 @@ include_once 'Models/disco_model.php';
 include_once 'Models/noticia_model.php';
 include_once 'Models/opinion_model.php';
 include_once 'Models/imagen_model.php';
+include_once 'Models/imagen_noticia_model.php';
 include_once 'Models/usuario_model.php';
 
 class PaginaController{
@@ -16,6 +17,7 @@ class PaginaController{
     $this->modelCategoria=new CategoriaModel();
     $this->modelImagen=new ImagenModel();
     $this->modelUsuario=new UsuarioModel();
+    $this->modelImagenNoticia= new ImagenNoticiaModel();
   }
   //Navegacion
     function mostrarHome(){
@@ -46,10 +48,13 @@ class PaginaController{
       $this->view->mostrarModificarDisco($_REQUEST['id_disco'],$_REQUEST['nombre'],$_REQUEST['anio'],$_REQUEST['discografica']);
     }
     function mostrarModificarNoticia(){
-      $this->view->mostrarModificarNoticia($_REQUEST['id_noticia'],$_REQUEST['nombre'],$_REQUEST['contenido'],$this->modelCategoria->getCategorias());
+      $this->view->mostrarModificarNoticia($_REQUEST['id_noticia'],$_REQUEST['nombre'],$_REQUEST['contenido'],$this->modelCategoria->getCategorias(),$this->modelImagenNoticia->getImagenesById($_REQUEST['id_noticia']));
     }
     function mostrarModificarCategoria(){
       $this->view->mostrarModificarCategoria($_REQUEST['id_categoriaNoticia'],$_REQUEST['categoria']);
+    }
+    function mostrarImagenesNoticia(){
+      $this->view->mostrarImagenesNoticia($this->modelImagenNoticia->getImagenesById($_REQUEST['fk_id_noticia']));
     }
 
 

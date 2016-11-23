@@ -13,6 +13,7 @@ class ConfigApp {
   public static $ACTION_MOSTRAR_MODIFICAR_DISCO='mostrar_modificar_disco';
   public static $ACTION_MOSTRAR_MODIFICAR_NOTICIA='mostrar_modificar_noticia';
   public static $ACTION_MOSTRAR_MODIFICAR_CATEGORIA='mostrar_modificar_categoria';
+  public static $ACTION_MOSTRAR_IMAGENES_NOTICIA='mostrar_imagenes_noticia';
 //ABM
 //Altas
   public static $ACTION_CARGAR_IMAGEN='cargar_imagen';
@@ -25,6 +26,7 @@ class ConfigApp {
   public static $ACTION_BORRAR_CATEGORIA='borrar_categoria';
   public static $ACTION_BORRAR_DISCO='borrar_disco';
   public static $ACTION_BORRAR_IMAGEN='borrar_imagen';
+  public static $ACTION_BORRAR_IMAGEN_NOTICIA='borrar_imagen_noticia';
 
 //Modificaciones
 

@@ -17,4 +17,4 @@ class ImagenController
       $this->mostrarCargarImagenes();
   }
 }
- ?>
+?>

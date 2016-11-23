@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-11-16 09:01:13
+<?php /* Smarty version 3.1.27, created on 2016-11-21 00:55:49
          compiled from "D:\xampp\htdocs\Primera-Entrega-web2-2016\Admin\templates\admin.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:23503582c12491479a0_52871393%%*/
+/*%%SmartyHeaderCode:22856583238051012b8_06425112%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -15,7 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4a166b95e4a6f6f1a38aca25d57d70de35a34c0a' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Primera-Entrega-web2-2016\\Admin\\templates\\base.tpl',
-      1 => 1479281254,
+      1 => 1479678878,
       2 => 'file',
     ),
     'd62ed2594a51c05bd217f84de060c38ae72c35df' => 
@@ -31,16 +31,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '23503582c12491479a0_52871393',
+  'nocache_hash' => '22856583238051012b8_06425112',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_582c124968b563_21756304',
+  'unifunc' => 'content_5832380573b028_84754582',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_582c124968b563_21756304')) {
-function content_582c124968b563_21756304 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5832380573b028_84754582')) {
+function content_5832380573b028_84754582 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '23503582c12491479a0_52871393';
+$_smarty_tpl->properties['nocache_hash'] = '22856583238051012b8_06425112';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +50,7 @@ $_smarty_tpl->properties['nocache_hash'] = '23503582c12491479a0_52871393';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Administracion-<?php
-$_smarty_tpl->properties['nocache_hash'] = '23503582c12491479a0_52871393';
+$_smarty_tpl->properties['nocache_hash'] = '22856583238051012b8_06425112';
 ?>
  Principal</title>
 
@@ -86,7 +86,7 @@ $_smarty_tpl->properties['nocache_hash'] = '23503582c12491479a0_52871393';
       <div id="contenido">
         <h1 class="page-header">Pagina de Administracion</h1>
         <?php
-$_smarty_tpl->properties['nocache_hash'] = '23503582c12491479a0_52871393';
+$_smarty_tpl->properties['nocache_hash'] = '22856583238051012b8_06425112';
 ?>
 
 <table class="table table-bordered">

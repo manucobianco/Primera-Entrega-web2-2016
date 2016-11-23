@@ -1,11 +1,17 @@
     <h1 class="page-header">Cargar Noticia</h1>
-    <form action="#" method="GET"enctype="multipart/form-data">
+    <form id="form-noticia" method="POST"enctype="multipart/form-data">
       <div class="form-group">
         <label for="inputTituloNoticia">Titulo Noticia</label>
         <input type="text" class="form-control" id="inputTituloNoticia"name="inputTituloNoticia" placeholder="Titulo de la Noticia" required>
       </div>
       <div class="form-group">
         <textarea class="form-control" rows="3" id="txtNoticia"name="txtNoticia" placeholder="Contenido de la Noticia"required></textarea>
+      </div>
+      <div class="form-group">
+        <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+        <label for="inputFile">Cargar Imagenes</label>
+        <input type="file" id="input-imagen"name="imagen[]" multiple="multiple">
+        <p class="help-block">tipos de imagen admitidas: .gif .png .jpg .jpeg</p>
       </div>
       <label for="categoria">Categoria</label>
       <select class="form-control" id="categoria"name="categoria">
