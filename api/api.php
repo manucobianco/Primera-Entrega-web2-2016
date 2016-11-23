@@ -23,7 +23,13 @@ abstract class Api{
 
    private function _response($data, $status = 200) {
        header("HTTP/1.1 " . $status . " " . $this->_requestStatus($status));
-       return json_encode($data);
+       session_start();
+       if(isset($_SESSION['tipo'])&&($_SESSION['tipo']=='admin')){
+         $miArray = array("datos"=>$data, "admin"=>true);
+       }else{
+         $miArray = array("datos"=>$data, "admin"=>false);
+       }
+       return json_encode($miArray);
    }
 
 

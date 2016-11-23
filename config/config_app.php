@@ -19,5 +19,6 @@ class ConfigApp {
   // public static $ACTION_CATEGORIAS = 'categorias';
   public static $ACTION_NOTICIA = 'noticia';
   public static $ACTION_MOSTRAR_COMENTARIOS= 'mostrar_comentarios';
+  public static $ACTION_LOGOUT= 'logout';
 }
  ?>

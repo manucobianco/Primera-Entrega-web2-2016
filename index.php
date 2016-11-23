@@ -4,6 +4,7 @@ include_once 'controller/pagina_controller.php';
 include_once 'controller/opinion_controller.php';
 include_once 'controller/usuario_controller.php';
 include_once 'controller/comentarios_controller.php';
+include_once 'controller/noticias_controller.php';
 
 if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST) ||
 $_REQUEST[ConfigApp::$ACTION] == ConfigApp::$ACTION_DEFAULT)
@@ -30,8 +31,8 @@ else {
     break;
 
     case ConfigApp::$ACTION_MOSTRAR_NOTICIAS:
-        $paginaController = new paginaController();
-        $paginaController->mostrarNoticias();
+        $noticiasController = new noticiasController();
+        $noticiasController->mostrarNoticias();
     break;
 
     case ConfigApp::$ACTION_MOSTRAR_OPINION:
@@ -50,8 +51,8 @@ else {
     break;
 
     case ConfigApp::$ACTION_TRATER_NOTICIAS_ESPECIFICAS:
-        $paginaController = new paginaController();
-        $paginaController->traerNoticiasEspecificas();
+        $noticiasController = new noticiasController();
+        $noticiasController->mostrarNoticiasEspecificas();
     break;
 
     case ConfigApp::$ACTION_PAGINA_LOGIN:
@@ -75,9 +76,12 @@ else {
     break;
 
     case ConfigApp::$ACTION_NOTICIA:
-        $paginaController = new paginaController();
-        $paginaController->mostrarNoticia();
+        $noticiasController = new noticiasController();
+        $noticiasController->mostrarNoticia();
     break;
+
+
+
 
     // case ConfigApp::$ACTION_CATEGORIAS:
     //     $paginaController = new paginaController();
@@ -88,6 +92,13 @@ else {
         $comentariosController = new comentariosController();
         $comentariosController->mostrarComentarios();
     break;
+
+    case ConfigApp::$ACTION_LOGOUT:
+        $usuarioController = new usuarioController();
+        $usuarioController->logout();
+    break;
+
+
 
 
 

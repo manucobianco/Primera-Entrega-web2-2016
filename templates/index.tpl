@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="images/rataVioleta.png"/>
     <head>
@@ -34,15 +35,20 @@
                           <li><a href="https://twitter.com/cuartetodenos"target="_blank">Twitter</a></li>
                           <li><a href="https://www.youtube.com/user/cuartetodenos"target="_blank">Youtube</a></li>
                           <li class="divider"></li>
-                            <li><a id="lnkComentarios" href="">Comentarios</a></li>
                             <li><a id="lnkOpinion" href="">Envianos tu mail</a></li>
                         </ul>
                        </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="index.php?action=pagina_login">Iniciar Sesion</a></li>
-                  <li><a href="index.php?action=register">Registrate</a></li>
-                </ul>
+                {if $emailSession}
+                  <ul>
+                    <li class="nav navbar-nav navbar-right"><span id="saludarAdmin">Hola <b>{$emailSession}</b> ! </span><a href="index.php?action=logout">Log Out</a></li>
+                  </ul>
+                {else}
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.php?action=pagina_login">Iniciar Sesion</a></li>
+                    <li><a href="index.php?action=register">Registrate</a></li>
+                  </ul>
+                {/if}
               </div>
             </div>
       </nav>

@@ -24,15 +24,15 @@
 
         $usuario = $this->model->getUsuario($email);
         if(password_verify($pass,$usuario["password"])){
-          session_start();
-          $_SESSION["email"]=$email;
-          if($usuario['tipo']==1){
-            $_SESSION["tipo"]="admin";
-          }else{
-            $_SESSION["tipo"]="usuario";
+          if($usuario["tipo"]==1){
+            session_start();
+            $_SESSION["email"]=$email;
+            header("Location: index.php");
+            die();
           }
-          header("Location: index.php");
-          die();
+          else{
+            $this->view->mostrarError("Solo se permiten usuarios administradores");
+          }
         }
         else{
           $this->view->mostrarError("Usaurio o password incorrectos");
@@ -49,7 +49,7 @@
       session_start();
       session_destroy();
       header("Location: index.php");
-      die();  
+      die();
     }
   }
 ?>

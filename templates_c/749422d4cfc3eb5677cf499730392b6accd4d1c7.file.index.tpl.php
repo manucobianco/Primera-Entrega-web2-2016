@@ -1,27 +1,32 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-14 20:04:07
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 00:24:26
          compiled from ".\templates\index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:31896582a0aa7c3c7c8-23759345%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:211395834d3aa600e56-88054772%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '749422d4cfc3eb5677cf499730392b6accd4d1c7' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1479085039,
+      1 => 1479854302,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '31896582a0aa7c3c7c8-23759345',
+  'nocache_hash' => '211395834d3aa600e56-88054772',
   'function' => 
   array (
   ),
+  'variables' => 
+  array (
+    'emailSession' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_582a0aa7c73bb5_06856883',
+  'unifunc' => 'content_5834d3aa62b982_54216338',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_582a0aa7c73bb5_06856883')) {function content_582a0aa7c73bb5_06856883($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5834d3aa62b982_54216338')) {function content_5834d3aa62b982_54216338($_smarty_tpl) {?><!DOCTYPE html>
 <html>
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="images/rataVioleta.png"/>
     <head>
@@ -55,15 +60,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                           <li><a href="https://twitter.com/cuartetodenos"target="_blank">Twitter</a></li>
                           <li><a href="https://www.youtube.com/user/cuartetodenos"target="_blank">Youtube</a></li>
                           <li class="divider"></li>
-                            <li><a id="lnkComentarios" href="">Comentarios</a></li>
                             <li><a id="lnkOpinion" href="">Envianos tu mail</a></li>
                         </ul>
                        </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="index.php?action=pagina_login">Iniciar Sesion</a></li>
-                  <li><a href="index.php?action=register">Registrate</a></li>
-                </ul>
+                <?php if ($_smarty_tpl->tpl_vars['emailSession']->value){?>
+                  <ul>
+                    <li class="nav navbar-nav navbar-right"><span id="saludarAdmin">Hola <b><?php echo $_smarty_tpl->tpl_vars['emailSession']->value;?>
+</b> ! </span><a href="index.php?action=logout">Log Out</a></li>
+                  </ul>
+                <?php }else{ ?>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.php?action=pagina_login">Iniciar Sesion</a></li>
+                    <li><a href="index.php?action=register">Registrate</a></li>
+                  </ul>
+                <?php }?>
               </div>
             </div>
       </nav>

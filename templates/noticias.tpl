@@ -8,16 +8,18 @@
               <p class="pull-right visible-xs">
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Indice</button>
               </p>
+            {if $idcategoria == 0 || $categoria['id_categoriaNoticia'] == $idcategoria}
             <div class="noticiaTitulo" id="{$categoria['categoria']}">
               <h1>{$categoria['categoria']}</h1>
             </div>
+            {/if}
             <div class="row">
             {foreach $noticias as $noticia}
             {if $noticia['fk_id_categoriaNoticia']==$categoria['id_categoriaNoticia']}
 
                 <div class="col-xs-12 col-lg-6" id="noticiaIndividual">
                   <h2>{$noticia['nombre']}</h2>
-                  <p>{$noticia['contenido']}</p>
+                  <p>{$noticia['subTitulo']}</p>
                   <img src="images/imagen-no-disponible.jpg" alt="Imagen No Disponible" />
                   <p><a href="" class="noticiaLink"  id="{$noticia['id_noticia']}">Mas Detalles»</a></p>
               </div><!--/.col-xs-6.col-lg-4-->
@@ -35,7 +37,7 @@
          <div class="list-group">
            <a class="list-group-item active">Indice</a>
            {foreach $categorias as $categoria}
-            <a href="" id="{$categoria['categoria']}"  class="list-group-item categorias">{$categoria['categoria']}</a>
+            <a href="" id="{$categoria['id_categoriaNoticia']}"  class="list-group-item noticiasIndice">{$categoria['categoria']}</a>
            {/foreach}
          </div>
   </div><!--/.sidebar-offcanvas-->

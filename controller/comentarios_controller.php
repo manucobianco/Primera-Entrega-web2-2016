@@ -1,6 +1,6 @@
 <?php
 include_once 'view/pagina_view.php';
-include_once 'model/comentarios_model.php';
+
 
 class comentariosController  {
 
@@ -12,7 +12,7 @@ class comentariosController  {
     $this->model = new comentariosModel();
     $this->view = new paginaView();
   }
-
+  
   function mostrarComentarios(){
     session_start();
     if(isset($_SESSION["email"])){
@@ -21,7 +21,7 @@ class comentariosController  {
     else {
       $emailSession = "";
     }
-      $this->view->mostrarComentarios($this->model->mostrarComentarios(),$emailSession);
+      $this->view->mostrarNoticia($this->model->mostrarComentarios(),$emailSession);
   }
 
 }
