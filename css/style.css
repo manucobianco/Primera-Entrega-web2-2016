@@ -107,8 +107,9 @@ ul, menu, dir {
 #saludarAdmin{
 	color: white;
 }
-.btnEnviarConEstrellas > *{
-	display: inline-block;
+.btnEnviarConEstrellas > p{
+	/*display: inline-block;*/
+	text-align: center;
 }
 
 /*----- estrellas -----*/

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 00:24:32
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 20:31:43
          compiled from ".\templates\noticia.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:322065834d3b036d8d7-77931075%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '57493266e6cf3709ce273e4f66f44a566b9e8027' => 
     array (
       0 => '.\\templates\\noticia.tpl',
-      1 => 1479599042,
+      1 => 1479929477,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5834d3b039fe19_78261373',
   'variables' => 
   array (
     'noticia' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'comentario' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5834d3b039fe19_78261373',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5834d3b039fe19_78261373')) {function content_5834d3b039fe19_78261373($_smarty_tpl) {?><div id="noticia" class="container">
 
@@ -73,7 +73,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                   </div>
               <?php }?>
                   <div class="list-group">
-                      <table id="tablaComentarios">
+                      <table id="tablaComentarios"  class="table table-striped">
                         <!-- <li class="list-group-item active">Comentarios</li>
                         <?php  $_smarty_tpl->tpl_vars['comentario'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['comentario']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['comentarios']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

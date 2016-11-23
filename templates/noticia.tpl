@@ -41,7 +41,7 @@
                   </div>
               {/if}
                   <div class="list-group">
-                      <table id="tablaComentarios">
+                      <table id="tablaComentarios"  class="table table-striped">
                         <!-- <li class="list-group-item active">Comentarios</li>
                         {foreach $comentarios as $comentario}
                           <li class="list-group-item">{$comentario['comentario']}</li>
