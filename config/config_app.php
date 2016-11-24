@@ -11,7 +11,7 @@ class ConfigApp {
   public static $ACTION_MOSTRAR_OPINION = 'mostrar_opinion';
   public static $ACTION_ENVIAR_OPINION = 'enviar_opinion';
   public static $ACTION_TRAER_DISCOS = 'traer_discos';
-  public static $ACTION_TRAER_NOTICIAS_ESPECIFICAS = 'traer_noticias_especificas';
+  public static $ACTION_TRATER_NOTICIAS_ESPECIFICAS = 'trater_noticias_especificas';
   public static $ACTION_PAGINA_LOGIN = 'pagina_login';
   public static $ACTION_VALIDAR_LOGIN = 'validar_login';
   public static $ACTION_REGISTER = 'register';
@@ -19,5 +19,6 @@ class ConfigApp {
   // public static $ACTION_CATEGORIAS = 'categorias';
   public static $ACTION_NOTICIA = 'noticia';
   public static $ACTION_MOSTRAR_COMENTARIOS= 'mostrar_comentarios';
+  public static $ACTION_LOGOUT= 'logout';
 }
  ?>

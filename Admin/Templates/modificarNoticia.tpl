@@ -16,6 +16,10 @@
           <input type="text" class="form-control" id="inputTituloNoticia"name="inputTituloNoticia" value="{$titulo}"placeholder="Titulo de la Noticia" required>
         </div>
         <div class="form-group">
+          <label for="inputSubTituloNoticia">Sub-Titulo Noticia</label>
+          <input type="text" class="form-control" id="inputSubTituloNoticia"name="inputSubTituloNoticia" value="{$subTitulo}"placeholder="Sub-Titulo de la Noticia" required>
+        </div>
+        <div class="form-group">
           <textarea class="form-control" rows="3" id="txtNoticia"name="txtNoticia"placeholder="Contenido de la Noticia"required>{$contenido}</textarea>
         </div>
         <div class="form-group">

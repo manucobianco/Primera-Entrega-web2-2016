@@ -21,12 +21,14 @@
   <body>
     <div class="container">
       <img src="images/rataBlanca.png"/>
+      <ul>
+        <li id="saludarAdmin" class="nav navbar-nav navbar-right">Hola <b>{$email}</b> ! <a href="index.php?action=logout">Log Out</a></li>
+      </ul>
     </div>
     {block name="wrap"}
     <div class="container" id="wrap">
       <ul class="nav nav-pills">
         <li role="presentation" class="active"id="home"><a class="home" href="#">Administrar Opiniones</a></li>
-        <li role="presentation"id="cargarImagenes"><a class="cargar-imagenes" href="#">Administrar Imagenes</a></li>
         <li role="presentation" id="cargarNoticias"><a class="cargar-noticia" href="#">Administrar Noticias</a></li>
         <li role="presentation"id="crearCategoria"><a class="crear-categoria" href="#">Administrar Categorias</a></li>
         <li role="presentation"id="cargarDisco"><a class="cargar-disco" href="#">Administrar Discos</a></li>
@@ -44,7 +46,6 @@
     <script src="js/jquery-2.1.4.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/admin.js" type="text/javascript"></script>
-
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

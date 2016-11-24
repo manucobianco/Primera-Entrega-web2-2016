@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2016 a las 22:29:09
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.5.37
+-- Tiempo de generación: 23-11-2016 a las 21:33:35
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -49,19 +49,17 @@ INSERT INTO `categorianoticia` (`id_categoriaNoticia`, `categoria`) VALUES
 CREATE TABLE `comentario` (
   `id_comentario` int(11) NOT NULL,
   `comentario` varchar(500) NOT NULL,
-  `fk_id_usuario` int(11) NOT NULL,
-  `fk_id_noticia` int(11) NOT NULL
+  `id_noticia` decimal(10,0) NOT NULL,
+  `valoracion` decimal(10,0) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `comentario`
 --
 
-INSERT INTO `comentario` (`id_comentario`, `comentario`, `fk_id_usuario`, `fk_id_noticia`) VALUES
-(1, 'este es un comentario de test', 1, 7),
-(2, 'este tambien', 2, 7),
-(3, 'dadasdas', 1, 13),
-(4, 'dadasdas', 2, 14);
+INSERT INTO `comentario` (`id_comentario`, `comentario`, `id_noticia`, `valoracion`) VALUES
+(29, 'oh que buena pagina, por dios nuca vi nada mejor programado!', '7', '5'),
+(30, 'oh voy a a agregar', '7', '2');
 
 -- --------------------------------------------------------
 
@@ -119,40 +117,26 @@ INSERT INTO `imagen` (`id_imagen`, `path`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `imagendenoticia`
---
-
-CREATE TABLE `imagendenoticia` (
-  `id_imagendenoticia` int(11) NOT NULL,
-  `path` varchar(100) NOT NULL,
-  `nombre` int(50) NOT NULL,
-  `fk_id_noticia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `noticia`
 --
 
 CREATE TABLE `noticia` (
   `id_noticia` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `contenido` varchar(1200) NOT NULL,
-  `puntaje` int(11) NOT NULL,
-  `cantidadvotos` int(11) NOT NULL,
-  `fk_id_categoriaNoticia` int(11) NOT NULL
+  `subTitulo` varchar(300) NOT NULL,
+  `fk_id_categoriaNoticia` int(11) NOT NULL,
+  `contenido` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `noticia`
 --
 
-INSERT INTO `noticia` (`id_noticia`, `nombre`, `contenido`, `puntaje`, `cantidadvotos`, `fk_id_categoriaNoticia`) VALUES
-(7, '22 Noviembre ', 'Auditorio Nacional del Sodre, Montevideo, Uruguay\r\n20:00 HS', 0, 0, 9),
-(8, '25 Noviembre', 'Luna Park, Buenos Aires, Argentina 21:00 HS', 0, 0, 9),
-(13, 'Novedades 2016  Argentina, México, Perú, video y n', 'Mientras se desarrolla la etapa final de la gira HABLA TU ESPEJO por Latinoamérica, el Cuarteto pre produce su próximo disco. Para segunda mitad del año entrarán al estudio y para fines de año, ya habrá un nuevo single sonando.', 0, 0, 10),
-(14, 'Estrena Sencillo', 'La banda uruguaya estrenó "No Llora", el primer sencillo de su nuevo álbum "Habla Tu Espejo", a la venta en octubre. Se trata de una balada inspirada en Federica, la pequeña hija de Roberto Musso, cantante y líder de El Cuarteto de Nos.', 0, 0, 10);
+INSERT INTO `noticia` (`id_noticia`, `nombre`, `subTitulo`, `fk_id_categoriaNoticia`, `contenido`) VALUES
+(7, '22 Noviembre ', 'Auditorio Nacional del Sodre, Montevideo, Uruguay\r\n20:00 HS', 9, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum velit odio, at vestibulum erat dignissim vel. Integer lacinia odio quis justo molestie pretium. Proin nibh mi, fringilla eu mollis et, semper in ante. Morbi posuere massa eget purus luctus, et fermentum ligula ultrices. Mauris eu dolor in arcu aliquam malesuada. Curabitur convallis ipsum ac turpis consequat faucibus. Phasellus lacinia mollis lorem vel maximus. Pellentesque cursus nulla id dignissim porta. Nullam vestibulum pretium ligula quis pulvinar. Donec molestie feugiat magna, vel condimentum orci varius at. Praesent bibendum accumsan massa at convallis. Suspendisse at leo porttitor, facilisis dui quis, maximus eros. Integer eu arcu ut purus egestas lobortis at a augue. Nulla eget feugiat turpis. Praesent quis fringilla diam.'),
+(8, '25 Noviembre', 'Luna Park, Buenos Aires, Argentina 21:00 HS', 9, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum velit odio, at vestibulum erat dignissim vel. Integer lacinia odio quis justo molestie pretium. Proin nibh mi, fringilla eu mollis et, semper in ante. Morbi posuere massa eget purus luctus, et fermentum ligula ultrices. Mauris eu dolor in arcu aliquam malesuada. Curabitur convallis ipsum ac turpis consequat faucibus. Phasellus lacinia mollis lorem vel maximus. Pellentesque cursus nulla id dignissim porta. Nullam vestibulum pretium ligula quis pulvinar. Donec molestie feugiat magna, vel condimentum orci varius at. Praesent bibendum accumsan massa at convallis. Suspendisse at leo porttitor, facilisis dui quis, maximus eros. Integer eu arcu ut purus egestas lobortis at a augue. Nulla eget feugiat turpis. Praesent quis fringilla diam.'),
+(13, 'Novedades 2016  Argentina, México, Perú, video y n', 'Mientras se desarrolla la etapa final de la gira HABLA TU ESPEJO por Latinoamérica, el Cuarteto pre produce su próximo disco. Para segunda mitad del año entrarán al estudio y para fines de año, ya habrá un nuevo single sonando.', 10, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum velit odio, at vestibulum erat dignissim vel. Integer lacinia odio quis justo molestie pretium. Proin nibh mi, fringilla eu mollis et, semper in ante. Morbi posuere massa eget purus luctus, et fermentum ligula ultrices. Mauris eu dolor in arcu aliquam malesuada. Curabitur convallis ipsum ac turpis consequat faucibus. Phasellus lacinia mollis lorem vel maximus. Pellentesque cursus nulla id dignissim porta. Nullam vestibulum pretium ligula quis pulvinar. Donec molestie feugiat magna, vel condimentum orci varius at. Praesent bibendum accumsan massa at convallis. Suspendisse at leo porttitor, facilisis dui quis, maximus eros. Integer eu arcu ut purus egestas lobortis at a augue. Nulla eget feugiat turpis. Praesent quis fringilla diam.'),
+(14, 'Estrena Sencillo', 'La banda uruguaya estrenó "No Llora", el primer sencillo de su nuevo álbum "Habla Tu Espejo", a la venta en octubre. Se trata de una balada inspirada en Federica, la pequeña hija de Roberto Musso, cantante y líder de El Cuarteto de Nos.', 10, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum velit odio, at vestibulum erat dignissim vel. Integer lacinia odio quis justo molestie pretium. Proin nibh mi, fringilla eu mollis et, semper in ante. Morbi posuere massa eget purus luctus, et fermentum ligula ultrices. Mauris eu dolor in arcu aliquam malesuada. Curabitur convallis ipsum ac turpis consequat faucibus. Phasellus lacinia mollis lorem vel maximus. Pellentesque cursus nulla id dignissim porta. Nullam vestibulum pretium ligula quis pulvinar. Donec molestie feugiat magna, vel condimentum orci varius at. Praesent bibendum accumsan massa at convallis. Suspendisse at leo porttitor, facilisis dui quis, maximus eros. Integer eu arcu ut purus egestas lobortis at a augue. Nulla eget feugiat turpis. Praesent quis fringilla diam.');
 
 -- --------------------------------------------------------
 
@@ -189,7 +173,7 @@ INSERT INTO `opinionusuario` (`id_opinionUsuario`, `nombre`, `email`, `opinion`)
 --
 
 CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `tipo` decimal(10,0) NOT NULL DEFAULT '0'
@@ -199,10 +183,9 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `email`, `password`, `tipo`) VALUES
-(1, 'manucobianco@gmail.com', '$2a$12$KX5wagI1ZYGdUSt1ZVagZu90qCnJSlwOEGmJi5IkQ8dMh95aWPg9S', '2'),
-(2, 'admin@gmail.com', '$2y$10$ISh7ofvxWqGDHxCRl3ApWOwjlInsNPccIxiLM4TDEMZ5o.fE.mN2C', '2'),
-(3, 'l@gmail.com', '$2y$10$mRI0TbljlrVzSmGH7GhXsOC7KSei3Tdv7K6yaHpof5rqBERUwXCju', '0');
+INSERT INTO `usuario` (`id`, `email`, `password`, `tipo`) VALUES
+(1, 'manucobianco@gmail.com', '$2a$12$KX5wagI1ZYGdUSt1ZVagZu90qCnJSlwOEGmJi5IkQ8dMh95aWPg9S', '0'),
+(2, 'admin@gmail.com', '$2y$10$6hXrhTmMqYVB72lNB2JmZ.NT9iVZYIVbseYSFGeOKHpUK/ONtdG8m', '1');
 
 --
 -- Índices para tablas volcadas
@@ -233,12 +216,6 @@ ALTER TABLE `imagen`
   ADD PRIMARY KEY (`id_imagen`);
 
 --
--- Indices de la tabla `imagendenoticia`
---
-ALTER TABLE `imagendenoticia`
-  ADD PRIMARY KEY (`id_imagendenoticia`);
-
---
 -- Indices de la tabla `noticia`
 --
 ALTER TABLE `noticia`
@@ -254,7 +231,7 @@ ALTER TABLE `opinionusuario`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -269,7 +246,7 @@ ALTER TABLE `categorianoticia`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT de la tabla `disco`
 --
@@ -281,15 +258,10 @@ ALTER TABLE `disco`
 ALTER TABLE `imagen`
   MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT de la tabla `imagendenoticia`
---
-ALTER TABLE `imagendenoticia`
-  MODIFY `id_imagendenoticia` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `opinionusuario`
 --
@@ -299,7 +271,7 @@ ALTER TABLE `opinionusuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

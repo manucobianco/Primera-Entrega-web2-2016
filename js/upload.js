@@ -8,7 +8,7 @@ $("#form-opinion").submit(function(ev){
   ev.preventDefault();
   var datos = new FormData();
 
-
+  // Agregamos las imagenes a los datos a subir
 
   var nombre =  $("#name").val();
 

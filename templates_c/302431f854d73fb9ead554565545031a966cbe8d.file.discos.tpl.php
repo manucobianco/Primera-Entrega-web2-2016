@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-12 23:43:24
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 20:50:41
          compiled from ".\templates\discos.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:7465580ea5301aa379-56470770%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:309625835f31188ebf9-18181082%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,20 +11,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '7465580ea5301aa379-56470770',
+  'nocache_hash' => '309625835f31188ebf9-18181082',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_580ea53042ec85_59696515',
   'variables' => 
   array (
     'discos' => 0,
     'disco' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5835f3118d61c5_70606441',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_580ea53042ec85_59696515')) {function content_580ea53042ec85_59696515($_smarty_tpl) {?>      <table class="table table-bordered">
+<?php if ($_valid && !is_callable('content_5835f3118d61c5_70606441')) {function content_5835f3118d61c5_70606441($_smarty_tpl) {?>      <table class="table table-bordered">
         <thead>
             <th>
               Nombre

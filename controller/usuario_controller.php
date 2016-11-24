@@ -3,16 +3,16 @@
   include_once 'view/register_view.php';
   include_once 'model/usuario_model.php';
 
-  class UsuarioController {
+  class usuarioController {
 
     private $model;
     private $login_view;
     private $register_view;
 
     function __construct() {
-      $this->model = new UsuarioModel();
-      $this->login_view = new LoginView();
-      $this->register_view = new RegisterView();
+      $this->model = new usuarioModel();
+      $this->login_view = new loginView();
+      $this->register_view = new registerView();
         }
 
     function mostrarLogin(){
@@ -74,6 +74,13 @@
           $this->register_view->mostrarError("Debe ingresar un usaurio y password.");
         }
       $this->register_view->mostrarRegistro();
+    }
+
+    function logout(){
+      session_start();
+      session_destroy();
+      header("Location: index.php");
+      die();      
     }
 
 

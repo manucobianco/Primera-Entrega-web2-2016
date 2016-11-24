@@ -16,7 +16,8 @@ function mostrarHome(){
   $this->smarty->display('index.tpl');
 }
 function mostrarAdmin($opiniones){
-    $this->smarty->assign('opiniones',$opiniones);
+  $this->smarty->assign('email',$_SESSION["email"]);
+  $this->smarty->assign('opiniones',$opiniones);
   $this->smarty->display('admin.tpl');
 }
 
@@ -24,7 +25,7 @@ function mostrarError($error){
   array_push($this->errores, $error);
 }
 function mostrarPrincipal($opiniones){
-    $this->smarty->assign('opiniones',$opiniones);
+  $this->smarty->assign('opiniones',$opiniones);
   $this->smarty->display('principal.tpl');
 }
 function mostrarCargarNoticia($categorias,$noticias){
@@ -55,9 +56,10 @@ function mostrarModificarDisco($id_disco,$nombre,$anio,$discografica){
   $this->smarty->assign('discografica',$discografica);
   $this->smarty->display('modificarDisco.tpl');
 }
-function mostrarModificarNoticia($id_noticia,$titulo,$contenido,$categorias,$imagenes){
+function mostrarModificarNoticia($id_noticia,$titulo,$contenido,$categorias,$subTitulo,$imagenes){
   $this->smarty->assign('id_noticia',$id_noticia);
   $this->smarty->assign('titulo',$titulo);
+  $this->smarty->assign('subTitulo',$subTitulo);
   $this->smarty->assign('contenido',$contenido);
   $this->smarty->assign('categorias',$categorias);
   $this->smarty->assign('imagenes',$imagenes);

@@ -4,11 +4,10 @@ include_once 'Controllers/pagina_controller.php';
 include_once 'Controllers/categoria_controller.php';
 include_once 'Controllers/noticia_controller.php';
 include_once 'Controllers/disco_controller.php';
-include_once 'Controllers/imagen_controller.php';
 include_once 'Controllers/opinion_controller.php';
 include_once 'Controllers/usuario_controller.php';
 include_once 'Controllers/imagen_noticia_controller.php';
-
+include_once 'Controllers/admin_controller.php';
 
 //Tenga la clave action
 
@@ -24,6 +23,7 @@ else {
 
   switch ($_REQUEST[ConfigApp::$ACTION]) {
 //navegacion
+
     case  ConfigApp::$ACTION_DEFAULT:
       $controller = new PaginaController();
       $controller->mostrarPrincipal();
@@ -64,6 +64,7 @@ else {
       $controller = new PaginaController();
       $controller->mostrarImagenesNoticia();
       break;
+
 
 //ABM
 //Altas
@@ -125,6 +126,21 @@ else {
       $controller= new UsuarioController();
       $controller->modificarPermisos();
       break;
+  //admin
+    case ConfigApp::$ACTION_PAGINA_LOGIN:
+      $adminController= new adminController();
+      $adminController->mostrarLogin();
+      break;
+    case ConfigApp::$ACTION_VALIDAR_LOGIN:
+      $adminController= new adminController();
+      $adminController->validarLogin();
+      break;
+    case ConfigApp::$ACTION_LOGOUT:
+      $adminController= new adminController();
+      $adminController->logout();
+      break;
+
+
 
     default:
       echo 'Pagina no encontrada';

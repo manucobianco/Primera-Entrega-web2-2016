@@ -1,10 +1,10 @@
 <?php
 require_once 'model.php';
-class ComentariosModel extends Model {
+class comentariosModel extends Model {
 
-  function mostrarComentarios(){
-    $comentarios=$this->db->prepare("SELECT * FROM comentario");
-    $comentarios->execute();
+  function mostrarComentarios($id_noticia){
+    $comentarios=$this->db->prepare("SELECT * FROM comentario WHERE id_noticia=?");
+    $comentarios->execute(array($id_noticia));
     return $comentarios->fetchAll();
   }
 
@@ -14,9 +14,9 @@ class ComentariosModel extends Model {
     return $comentarios->rowCount();
   }
 
-  function crearComentario($comentario,$id_usuario,$id_noticia){
-    $coment = $this->db->prepare("INSERT INTO comentario (comentario,fk_id_usuario,fk_id_noticia) VALUES (?,?,?) ");
-    $coment->execute(array($comentario,$id_usuario,$id_noticia));
+  function crearComentario($comentario,$id_noticia,$valoracion){
+    $coment = $this->db->prepare("INSERT INTO comentario (comentario,id_noticia,valoracion) VALUES (?,?,?) ");
+    $coment->execute(array($comentario,$id_noticia,$valoracion));
     return $coment->rowCount();
   }
 }

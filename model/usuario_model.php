@@ -1,6 +1,6 @@
 <?php
 require_once 'model.php';
-class UsuarioModel extends Model {
+class usuarioModel extends Model {
 
   function getUsuario($email){
     $usuario = $this->db->prepare("SELECT * FROM usuario WHERE email = ?");

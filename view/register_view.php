@@ -1,7 +1,7 @@
 <?php
   include_once 'libs/Smarty.class.php';
 
-class RegisterView {
+class registerView {
     private $smarty;
     private $error;
   function __construct(){

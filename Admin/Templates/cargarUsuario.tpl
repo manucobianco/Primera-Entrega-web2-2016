@@ -17,7 +17,7 @@
             <tr>
               <td>{$usuario['email']}</td>
               <td>
-                {if $usuario['tipo']== 1}
+                {if $usuario['tipo']== 0}
                   Usuario
                 {else}
                   Administrador
