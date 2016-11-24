@@ -25,8 +25,9 @@ function mostrarDiscos($discos){
   $this->smarty->assign ('discos', $discos);
   $this->smarty->display('discos.tpl');
 }
-function mostrarNoticias($categorias,$noticias, $idcategoria){
+function mostrarNoticias($categorias,$noticias, $idcategoria,$imagenes){
   $this->smarty->assign('idcategoria',$idcategoria);
+  $this->smarty->assign('imagenes',$imagenes);
   $this->smarty->assign('categorias',$categorias);
   $this->smarty->assign('noticias',$noticias);
   $this->smarty->display('noticias.tpl');
@@ -35,8 +36,9 @@ function mostrarPaginaOpinion(){
   $this->smarty->display('opinion.tpl');
 }
 
-function mostrarNoticia($noticia,$emailSession){
+function mostrarNoticia($noticia,$emailSession,$imagenes){
   $this->smarty->assign('emailSession',$emailSession);
+  $this->smarty->assign('imagenes',$imagenes);
   $this->smarty->assign('noticia',$noticia);
 
   $this->smarty->display('noticia.tpl');

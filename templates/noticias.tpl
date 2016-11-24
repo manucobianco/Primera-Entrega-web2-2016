@@ -20,7 +20,15 @@
                 <div class="col-xs-12 col-lg-6" id="noticiaIndividual">
                   <h2>{$noticia['nombre']}</h2>
                   <p>{$noticia['subTitulo']}</p>
-                  <img src="images/imagen-no-disponible.jpg" alt="Imagen No Disponible" />
+                  {$isNoticia=false}
+                  {foreach $imagenes as $imagen}
+                    {if $imagen['fk_id_noticia']==$noticia['id_noticia']}
+                      {if $isNoticia==false}
+                        {$isNoticia=true}
+                        <img src="images/Noticias/{$imagen['nombre']}" class="img-thumbnail" alt="Imagen No Disponible" />
+                      {/if}
+                    {/if}
+                  {/foreach}
                   <p><a href="" class="noticiaLink"  id="{$noticia['id_noticia']}">Mas Detalles»</a></p>
               </div><!--/.col-xs-6.col-lg-4-->
 

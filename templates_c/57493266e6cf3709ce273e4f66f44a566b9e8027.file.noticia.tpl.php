@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 20:31:43
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-24 03:27:21
          compiled from ".\templates\noticia.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:322065834d3b036d8d7-77931075%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '57493266e6cf3709ce273e4f66f44a566b9e8027' => 
     array (
       0 => '.\\templates\\noticia.tpl',
-      1 => 1479929477,
+      1 => 1479954435,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'noticia' => 0,
+    'imagenes' => 0,
+    'imagen' => 0,
     'emailSession' => 0,
     'comentarios' => 0,
     'comentario' => 0,
@@ -32,6 +34,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
         <h1 class="blog-title"><?php echo $_smarty_tpl->tpl_vars['noticia']->value['nombre'];?>
 </h1>
+
+          <div class="imagenesNoticia">
+            <?php  $_smarty_tpl->tpl_vars['imagen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagen']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['imagenes']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->key => $_smarty_tpl->tpl_vars['imagen']->value){
+$_smarty_tpl->tpl_vars['imagen']->_loop = true;
+?>
+                <img src="images/Noticias/<?php echo $_smarty_tpl->tpl_vars['imagen']->value['nombre'];?>
+" class="img-thumbnail">
+            <?php } ?>
+          </div>
         <p class="lead blog-description"><?php echo $_smarty_tpl->tpl_vars['noticia']->value['subTitulo'];?>
 </p>
 

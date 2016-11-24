@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 00:50:58
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-24 03:30:47
          compiled from ".\templates\noticias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:252895834d3ac8b3635-56030265%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1243f9e0e3cd46d846c2178f3969b31da70d4fce' => 
     array (
       0 => '.\\templates\\noticias.tpl',
-      1 => 1479858651,
+      1 => 1479954640,
       2 => 'file',
     ),
   ),
@@ -24,6 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'categoria' => 0,
     'noticias' => 0,
     'noticia' => 0,
+    'imagenes' => 0,
+    'imagen' => 0,
+    'isNoticia' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -61,7 +64,20 @@ $_smarty_tpl->tpl_vars['noticia']->_loop = true;
 </h2>
                   <p><?php echo $_smarty_tpl->tpl_vars['noticia']->value['subTitulo'];?>
 </p>
-                  <img src="images/imagen-no-disponible.jpg" alt="Imagen No Disponible" />
+                  <?php $_smarty_tpl->tpl_vars['isNoticia'] = new Smarty_variable(false, null, 0);?>
+                  <?php  $_smarty_tpl->tpl_vars['imagen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagen']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['imagenes']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->key => $_smarty_tpl->tpl_vars['imagen']->value){
+$_smarty_tpl->tpl_vars['imagen']->_loop = true;
+?>
+                    <?php if ($_smarty_tpl->tpl_vars['imagen']->value['fk_id_noticia']==$_smarty_tpl->tpl_vars['noticia']->value['id_noticia']){?>
+                      <?php if ($_smarty_tpl->tpl_vars['isNoticia']->value==false){?>
+                        <?php $_smarty_tpl->tpl_vars['isNoticia'] = new Smarty_variable(true, null, 0);?>
+                        <img src="images/Noticias/<?php echo $_smarty_tpl->tpl_vars['imagen']->value['nombre'];?>
+" class="img-thumbnail" alt="Imagen No Disponible" />
+                      <?php }?>
+                    <?php }?>
+                  <?php } ?>
                   <p><a href="" class="noticiaLink"  id="<?php echo $_smarty_tpl->tpl_vars['noticia']->value['id_noticia'];?>
 ">Mas Detalles»</a></p>
               </div><!--/.col-xs-6.col-lg-4-->

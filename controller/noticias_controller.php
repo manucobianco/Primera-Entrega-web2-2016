@@ -18,11 +18,11 @@ include_once 'model/comentarios_model.php';
     }
 
     function mostrarNoticias(){
-      $this->view->mostrarNoticias($this->noticias_model->traerCategorias(),$this->noticias_model->traerNoticias(), 0);
+      $this->view->mostrarNoticias($this->noticias_model->traerCategorias(),$this->noticias_model->traerNoticias(), 0,$this->noticias_model->getImagenes());
     }
 
     function mostrarNoticiasEspecificas(){
-      $this->view->mostrarNoticias($this->noticias_model->traerCategorias(),$this->noticias_model->traerNoticiasEspecificas($_REQUEST['id']), $_REQUEST['id']);
+      $this->view->mostrarNoticias($this->noticias_model->traerCategorias(),$this->noticias_model->traerNoticiasEspecificas($_REQUEST['id']), $_REQUEST['id'],$this->noticias_model->getImagenes());
     }
 
     function mostrarNoticia(){
@@ -34,7 +34,7 @@ include_once 'model/comentarios_model.php';
         $emailSession = "";
       }
       if (isset($_REQUEST["id"])){
-        $this->view->mostrarNoticia($this->noticias_model->mostrarNoticia($_REQUEST["id"]),$emailSession);
+        $this->view->mostrarNoticia($this->noticias_model->mostrarNoticia($_REQUEST["id"]),$emailSession,$this->noticias_model->getImagenesPorId($_REQUEST["id"]));
       }
     }
   }

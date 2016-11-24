@@ -283,7 +283,7 @@ $("#form-modificar-noticia").submit(function(event){
       ,cache: false
       ,processData: false // No procesar los archivos
       ,contentType: false // Con false, jQuery selecciona automaticamente el tipo
-      ,complete:function(){alert("se cargaron los datos.");} // Con false, jQuery selecciona automaticamente el tipo
+      ,complete:function(data){console.log(data);} // Con false, jQuery selecciona automaticamente el tipo
 
     });
 

@@ -8,7 +8,6 @@ function recargarComentarios(id_noticia){
       error: function(data){alert("error")}
     }
   )
-//  $.get(api/comentario); DESPUES VER ASI
 }
 
 function mostrarComentarios(aux){

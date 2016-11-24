@@ -94,7 +94,7 @@ class PaginaController{
 
     function mostrarModificarNoticia(){
       if(isset($_SESSION["email"])){
-        $this->view->mostrarModificarNoticia($_REQUEST['id_noticia'],$_REQUEST['nombre'],$_REQUEST['contenido'],$this->modelCategoria->getCategorias(),$_REQUEST['subTitulo']);
+        $this->view->mostrarModificarNoticia($_REQUEST['id_noticia'],$_REQUEST['nombre'],$_REQUEST['contenido'],$this->modelCategoria->getCategorias(),$_REQUEST['subTitulo'],$this->modelImagenNoticia->getImagenesById($_REQUEST['id_noticia']));
       }else{
         header("Location: index.php?action=pagina_login");
         die();

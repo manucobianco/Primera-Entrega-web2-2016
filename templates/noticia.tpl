@@ -3,6 +3,12 @@
       <div class="blog-header">
 
         <h1 class="blog-title">{$noticia['nombre']}</h1>
+
+          <div class="imagenesNoticia">
+            {foreach $imagenes as $imagen}
+                <img src="images/Noticias/{$imagen['nombre']}" class="img-thumbnail">
+            {/foreach}
+          </div>
         <p class="lead blog-description">{$noticia['subTitulo']}</p>
 
       </div>

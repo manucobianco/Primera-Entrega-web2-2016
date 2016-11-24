@@ -56,7 +56,7 @@ function mostrarModificarDisco($id_disco,$nombre,$anio,$discografica){
   $this->smarty->assign('discografica',$discografica);
   $this->smarty->display('modificarDisco.tpl');
 }
-function mostrarModificarNoticia($id_noticia,$titulo,$contenido,$categorias,$subTitulo,$imagenes=array()){
+function mostrarModificarNoticia($id_noticia,$titulo,$contenido,$categorias,$subTitulo,$imagenes){
   $this->smarty->assign('id_noticia',$id_noticia);
   $this->smarty->assign('titulo',$titulo);
   $this->smarty->assign('subTitulo',$subTitulo);

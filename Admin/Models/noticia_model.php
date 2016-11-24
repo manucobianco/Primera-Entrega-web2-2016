@@ -20,10 +20,10 @@ class NoticiaModel extends Model{
     $consulta->execute(array($nombre,$subTitulo,$idCategoria,$contenido));
     $idNoticia= $this->db->lastInsertId();
     for ($i=0; $i < count($imagenes['name']) ; $i++) {
-      $nombre=$imagenes['name'][$i];
+      $nombre=uniqid().$imagenes['name'][$i];
       $ruta_provisional =$imagenes['tmp_name'][$i];
       $carpeta = "../images/Noticias/";
-      $src = $carpeta.uniqid().$nombre;
+      $src = $carpeta.$nombre;
       $consulta=$this->db->prepare('INSERT INTO imagendenoticia(path,nombre,fk_id_noticia) VALUES(?,?,?)');
       $consulta->execute(array($src,$nombre,$idNoticia));
       move_uploaded_file($ruta_provisional, $src);

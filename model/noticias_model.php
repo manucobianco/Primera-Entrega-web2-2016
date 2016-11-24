@@ -9,6 +9,18 @@ class noticiasModel extends Model {
     return $traer->fetchAll();
   }
 
+  function getImagenes(){
+    $consulta=$this->db->prepare("SELECT * FROM imagendenoticia");
+    $consulta->execute();
+    return $consulta->fetchAll();
+  }
+
+  function getImagenesPorId($id){
+    $consulta=$this->db->prepare("SELECT * FROM imagendenoticia WHERE fk_id_noticia=?");
+    $consulta->execute(array($id));
+    return $consulta->fetchAll();
+  }
+
   function traerCategorias()
   {
     $traer=$this->db->prepare("SELECT * FROM categorianoticia");
